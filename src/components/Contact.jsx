@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+
+/* ================= ANIMATION VARIANTS ================= */
 
 const container = {
   hidden: {},
@@ -20,6 +23,18 @@ const item = {
 };
 
 export default function Contact() {
+  const location = useLocation();
+
+  /* ================= SCROLL TO FORM ================= */
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <motion.section
       className="min-h-screen bg-black text-white pt-32 pb-24"
@@ -29,12 +44,8 @@ export default function Contact() {
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
 
-        {/* LEFT CONTENT */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
+        {/* ================= LEFT CONTENT ================= */}
+        <motion.div variants={container} initial="hidden" animate="show">
           <motion.span
             variants={item}
             className="text-sm uppercase tracking-widest text-gray-400"
@@ -78,9 +89,10 @@ export default function Contact() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT FORM */}
+        {/* ================= RIGHT FORM ================= */}
         <motion.form
-          className="bg-black border border-white/10 p-10 space-y-8"
+          id="contact-form"
+          className="bg-black border border-white/30 p-10 space-y-8"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -94,7 +106,7 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder={label === "FIRST NAME" ? "Jane" : "Watson"}
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-white/30"
                 />
               </motion.div>
             ))}
@@ -113,7 +125,7 @@ export default function Contact() {
                       ? "jane@framer.com"
                       : "+40749321767"
                   }
-                  className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none"
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-white/30"
                 />
               </motion.div>
             ))}
@@ -126,7 +138,7 @@ export default function Contact() {
             <textarea
               rows="5"
               placeholder="Write your message here..."
-              className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none resize-none"
+              className="w-full bg-white/5 border border-white/10 px-4 py-3 focus:outline-none focus:border-white/30 resize-none"
             />
           </motion.div>
 
@@ -134,7 +146,7 @@ export default function Contact() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="w-full bg-white text-black py-3 text-sm tracking-wide"
+            className="w-full bg-white text-black py-3 text-sm tracking-wide hover:bg-gray-200 transition"
           >
             Submit form
           </motion.button>

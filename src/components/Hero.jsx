@@ -29,19 +29,30 @@ import {
 export default function Hero() {
   return (
     <>
-      {/* ================= HERO ================= */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="absolute inset-0 bg-black/28" />
+{/* ================= HERO ================= */}
+<section className="relative bg-black overflow-hidden pt-[64px] sm:pt-[80px]">
 
-      </section>
+  <video
+    className="
+      w-full
+      aspect-[9/6] sm:aspect-video
+      object-contain sm:object-cover
+    "
+    src={heroVideo}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+
+  {/* Optional dark overlay */}
+  <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+</section>
+
+
+  
+
+
 
       {/* ================= SECTION 2 ================= */}
       <section className="relative bg-[#1f1f1f] overflow-hidden">
@@ -57,7 +68,6 @@ export default function Hero() {
             <h2 className="text-3xl sm:text-4xl md:text-[40px] font-light text-white leading-tight mb-6">
               Signature Spaces <br /> We Create
             </h2>
-
             <p className="text-gray-400 max-w-md sm:max-w-lg leading-relaxed text-sm sm:text-[15px]">
               Experience thoughtfully designed spaces where planning meets
               perfection. From concept to completion, we craft architectural,
@@ -68,7 +78,6 @@ export default function Hero() {
               Luxury in design. Strength in structure.
               Purpose in every detail.
             </p>
-
             <button className="mt-8 sm:mt-10 px-8 py-3 border border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black transition">
               Learn More
             </button>
@@ -86,7 +95,6 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             />
-
             {/* FRONT IMAGE */}
             <motion.img
               src={imgCenter}
@@ -100,6 +108,7 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
 
       {/* ================= SECTION 3 (WHAT WE DO) ================= */}
       <section className="relative z-20 bg-black py-20 sm:py-28">
@@ -160,6 +169,7 @@ export default function Hero() {
               Our Recent Work
             </h2>
           </div>
+
 
           <div className="relative overflow-x-hidden">
             <motion.div

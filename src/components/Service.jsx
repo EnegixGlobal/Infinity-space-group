@@ -28,22 +28,49 @@ const services = [
   { title: "3D Walkthrough", desc: "Realistic project visualization", image: walkthrough },
 ];
 
+/* ===== Animation Variants ===== */
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const stagger = {
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
 export default function Service() {
   return (
-    <section className="bg-black text-white mt-[80px]">
+    <section className="bg-black text-white mt-[55px]">
 
       {/* ================= TOP HERO ================= */}
-      <div className="pt-24 md:pt-32 pb-24 px-6">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="pt-24 md:pt-32 pb-24 px-6"
+      >
         <div className="max-w-7xl mx-auto">
           <p className="text-gray-400 text-sm mb-3">Service</p>
           <h1 className="text-4xl md:text-6xl font-medium leading-tight">
             EXPLORE OUR FINEST <br /> RESIDENCES
           </h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* ================= HERO IMAGE ================= */}
-      <div className="px-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="px-6"
+      >
         <div className="relative max-w-7xl mx-auto h-[500px] overflow-hidden rounded-2xl">
           <img
             src={planning}
@@ -51,7 +78,14 @@ export default function Service() {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6"
+          >
             <h2 className="text-2xl md:text-4xl font-medium">
               Designing Spaces. Delivering Excellence.
             </h2>
@@ -59,67 +93,88 @@ export default function Service() {
               From concept to completion, we deliver smart planning,
               elegant design, and flawless execution for every space.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ================= SERVICES TITLE ================= */}
-      <div className="pt-32 pb-16 text-center px-6">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="pt-32 pb-16 text-center px-6"
+      >
         <h2 className="text-3xl md:text-4xl font-medium">Our Services</h2>
         <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm">
           We design, plan, and build spaces that combine function,
           aesthetics, and long-term value.
         </p>
-      </div>
+      </motion.div>
 
-      {/* ================= SERVICE GRID ================= */}
-      <div className="pb-32 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* ================= ZIG ZAG SERVICES ================= */}
+<section className="bg-[#0f0f0f] text-white px-6">
+  <div className="max-w-7xl mx-auto space-y-32">
 
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="relative h-[260px] rounded-xl overflow-hidden group shadow-lg"
-            >
-              {/* Image */}
+    {services.map((service, index) => {
+      const isReverse = index % 2 !== 0;
+
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
+          {/* IMAGE */}
+          <div className={`${isReverse ? "lg:order-2" : ""}`}>
+            <div className="relative h-[280px] sm:h-[380px] lg:h-[460px] overflow-hidden rounded-xl">
               <img
                 src={service.image}
                 alt={service.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+          </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-500" />
+          {/* CONTENT */}
+          <div className={`${isReverse ? "lg:order-1" : ""}`}>
+            <span className="text-xs tracking-widest text-yellow-400">
+              {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </span>
 
-              {/* Text */}
-              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-5">
-                <span className="text-sm text-gray-300 mb-1 tracking-widest drop-shadow">
-                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
-                </span>
+            <h3 className="mt-4 text-xl sm:text-2xl font-semibold tracking-wide text-yellow-400 uppercase">
+              {service.title}
+            </h3>
 
-                <h3 className="text-lg font-semibold text-white drop-shadow-md">
-                  {service.title}
-                </h3>
+            <ul className="mt-6 space-y-3 text-gray-300 text-sm leading-relaxed">
+              <li>• 3D modeling of your chosen spaces</li>
+              <li>• Detailed furnishing & material detailing</li>
+              <li>• Multiple camera angles & views</li>
+              <li>• Scope for revisions & feedback</li>
+              <li>• High-resolution final output</li>
+            </ul>
+          </div>
+        </motion.div>
+      );
+    })}
 
-                <p className="mt-2 text-xs md:text-sm text-gray-200 leading-relaxed drop-shadow">
-                  {service.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-
-        </div>
-      </div>
+  </div>
+</section>
 
 
       {/* ================= CTA ================= */}
-      {/* ================= CTA ================= */}
-      <section className="border-t border-white/10">
-        <div className="max-w-xl mx-auto px-6 py-40 text-center">
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="border-t border-white/10"
+      >
+        <div className="max- mx-auto px-6 py-40 text-center">
 
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
             For Any Architects, Engineers <br className="hidden md:block" />
@@ -144,9 +199,7 @@ export default function Service() {
           </div>
 
         </div>
-      </section>
-
-
+      </motion.section>
     </section>
   );
 }
