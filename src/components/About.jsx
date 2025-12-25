@@ -32,7 +32,7 @@ export default function About() {
   return (
     <main className="bg-black text-white overflow-hidden">
 
-      <section className="pt-20 md:pt-32 pb-24 md:pb-40">
+      <section className="pt-40 md:pt-47 pb-24 md:pb-40">
   <div className="max-w-[1400px] mx-auto px-6 md:px-10">
 
     <motion.p
