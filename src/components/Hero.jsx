@@ -26,6 +26,39 @@ import {
   FaStar,
 } from "react-icons/fa";
 
+const testimonials = [
+  {
+    text:
+      "The team delivered exactly what we needed — on time and with amazing quality. Truly professional!",
+    name: "Aman Verma",
+  },
+  {
+    text:
+      "Very smooth experience. They explained everything clearly and the final result exceeded expectations.",
+    name: "Neha Sharma",
+  },
+  {
+    text:
+      "Great attention to detail. You can easily see how much effort they put into their work.",
+    name: "Rohan Patel",
+  },
+  {
+    text:
+      "Reliable service and quick response. Our project improved faster than we expected.",
+    name: "Priya Mehta",
+  },
+  {
+    text:
+      "Great value for money and premium service. I will definitely work with them again.",
+    name: "Abhishek Singh",
+  },
+  {
+    text:
+      "From planning to delivery everything was handled professionally. Highly recommended.",
+    name: "Kavita Desai",
+  },
+];
+
 export default function Hero() {
   return (
     <>
@@ -202,59 +235,64 @@ export default function Hero() {
       </section>
 
       {/* ================= SECTION 5 (TESTIMONIALS SLIDER) ================= */}
-      <section className="relative bg-black py-20 sm:py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white">
-              Hear What Our Customers <br /> Are Saying
-            </h2>
-            <p className="mt-3 sm:mt-6 text-gray-400 text-sm sm:text-base">
-              Our testimonials reflect genuine experiences from customers.
-            </p>
-          </div>
+<section className="relative bg-black py-20 sm:py-32 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="text-center mb-12 sm:mb-20">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white">
+        Hear What Our Customers <br /> Are Saying
+      </h2>
+      <p className="mt-3 sm:mt-6 text-gray-400 text-sm sm:text-base">
+        Our testimonials reflect genuine experiences from customers.
+      </p>
+    </div>
 
-          <div className="relative overflow-x-hidden">
-            <motion.div
-              className="flex gap-4 sm:gap-10"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 25,
-                ease: "linear",
-              }}
+    <div className="relative overflow-x-hidden">
+      <motion.div
+        className="flex gap-4 sm:gap-10"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: 25,
+          ease: "linear",
+        }}
+      >
+        {[avatar1, avatar2, avatar3, avatar1, avatar2, avatar3].map(
+          (img, index) => (
+            <div
+              key={index}
+              className="min-w-[260px] sm:min-w-[320px] md:min-w-[380px] bg-white rounded-2xl p-6 sm:p-10 text-gray-700"
             >
-              {[avatar1, avatar2, avatar3, avatar1, avatar2, avatar3].map(
-                (img, index) => (
-                  <div
-                    key={index}
-                    className="min-w-[260px] sm:min-w-[320px] md:min-w-[380px] bg-white rounded-2xl p-6 sm:p-10 text-gray-700"
-                  >
-                    <img
-                      src={img}
-                      alt={`avatar-${index}`}
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mb-4 sm:mb-6"
-                    />
-                    <p className="leading-relaxed mb-4 sm:mb-8 text-sm sm:text-base">
-                      “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Pellentesque euismod.”
-                    </p>
-                    <div className="flex items-center gap-1 mb-2">
-                      <FaStar className="text-black text-sm sm:text-base" />
-                      <FaStar className="text-black text-sm sm:text-base" />
-                      <FaStar className="text-black text-sm sm:text-base" />
-                      <FaStar className="text-black text-sm sm:text-base" />
-                      <FaStar className="text-gray-300 text-sm sm:text-base" />
-                    </div>
-                    <div className="font-medium text-black text-sm sm:text-base">
-                      Customer Name
-                    </div>
-                  </div>
-                )
-              )}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+              <img
+                src={img}
+                alt={`avatar-${index}`}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mb-4 sm:mb-6"
+              />
+
+              {/* Review text */}
+              <p className="leading-relaxed mb-4 sm:mb-8 text-sm sm:text-base">
+                “{testimonials[index % testimonials.length].text}”
+              </p>
+
+              {/* Stars */}
+              <div className="flex items-center gap-1 mb-2">
+                <FaStar className="text-black text-sm sm:text-base" />
+                <FaStar className="text-black text-sm sm:text-base" />
+                <FaStar className="text-black text-sm sm:text-base" />
+                <FaStar className="text-black text-sm sm:text-base" />
+                <FaStar className="text-gray-300 text-sm sm:text-base" />
+              </div>
+
+              {/* Name */}
+              <div className="font-medium text-black text-sm sm:text-base">
+                {testimonials[index % testimonials.length].name}
+              </div>
+            </div>
+          )
+        )}
+      </motion.div>
+    </div>
+  </div>
+</section>
     </>
   );
 }
