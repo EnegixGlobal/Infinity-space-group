@@ -14,41 +14,144 @@ import renovation from "../assets/renovation.jpg";
 import approval from "../assets/approval.jpg";
 import walkthrough from "../assets/walkthrough.jpg";
 
-/* SERVICES DATA */
+/* ================== SERVICES DATA WITH FULL DETAILS ================== */
 const services = [
-  { title: "Planning", desc: "Smart space planning tailored to your needs", image: planning },
-  { title: "Interior Designing", desc: "Functional, elegant, and modern interiors", image: interior },
-  { title: "Structural Designing", desc: "Safe, strong, and efficient structures", image: structure },
-  { title: "Material Works", desc: "Quality materials with skilled execution", image: material },
-  { title: "Estimating & Costing", desc: "Accurate budgeting and cost planning", image: costing },
-  { title: "2D & 3D Civil Works", desc: "Complete drafting & visualization services", image: civil },
-  { title: "Landscaping", desc: "Beautiful outdoor environments", image: landscape },
-  { title: "Renovation Works", desc: "Modern upgrades & restorations", image: renovation },
-  { title: "Map Approval", desc: "Fast & reliable approvals", image: approval },
-  { title: "3D Walkthrough", desc: "Realistic project visualization", image: walkthrough },
+  {
+    title: "Planning",
+    image: planning,
+    details: [
+      "A 2D plan is a flat top-down layout showing rooms, walls, doors & windows.",
+      "Includes Detailed plan (Foundation, Column, Beam, Electric, Plumbing, Septic tank, Stair).",
+      "Scope for revisions & feedback.",
+    ],
+  },
+
+  {
+    title: "Exterior Designing",
+    image: interior,
+    details: [
+      "3D modelling of your chosen spaces.",
+      "Detailed furnishing & material detailing.",
+      "Multiple camera angles & views.",
+      "Scope for revisions & feedback.",
+      "High-resolution final output.",
+    ],
+  },
+
+  {
+    title: "Interior Designing",
+    image: interior,
+    details: [
+      "3D modelling of your chosen spaces.",
+      "Detailed furnishing & material detailing.",
+      "Multiple camera angles & views.",
+      "Scope for revisions & feedback.",
+      "High-resolution final output.",
+    ],
+  },
+
+  {
+    title: "Structural Designing",
+    image: structure,
+    details: [
+      "Construction for Building.",
+      "High-rise Building.",
+      "Iron Structure Building / Warehouse.",
+      "All type structural solution.",
+    ],
+  },
+
+  {
+    title: "Turnkey Projects",
+    image: material,
+    details: [
+      "A-Grade Building material.",
+      "ISI mark TMT BAR.",
+      "Branded Tile & Granite.",
+      "Branded Co. Bath & Sanitary fitting.",
+      "Best Quality Furniture & Interior Product.",
+      "All type Civil & Interior Solution.",
+    ],
+  },
+
+  {
+    title: "Estimating & Costing",
+    image: costing,
+    details: [
+      "Construction for Building.",
+      "Iron Structure Building / Warehouse.",
+      "Government Project.",
+      "Interior Work.",
+    ],
+  },
+
+  {
+    title: "Civil Works",
+    image: civil,
+    details: [
+      "Residential & Commercial Building.",
+      "Iron Structure Building & Warehouse.",
+      "Apartment Projects.",
+      "School Projects.",
+      "Government Projects.",
+      "Turnkey Projects.",
+    ],
+  },
+
+  {
+    title: "Landscaping",
+    image: landscape,
+    details: [
+      "Residential & Commercial Building.",
+      "Bungalow Projects.",
+      "Apartment Projects.",
+      "Farmhouse Projects.",
+    ],
+  },
+
+  {
+    title: "Renovation Works",
+    image: renovation,
+    details: [
+      "Residential & Commercial Building.",
+      "Apartment Projects.",
+      "School Projects.",
+      "Interior Work.",
+    ],
+  },
+
+  {
+    title: "Map Approval (Naksha Passing)",
+    image: approval,
+    details: [
+      "RMC & RRDA for Approval.",
+      "Residential & Commercial Building.",
+      "Apartment.",
+    ],
+  },
+
+  {
+    title: "3D Walkthrough",
+    image: walkthrough,
+    details: [
+      "Virtual animated tour of interior/exterior spaces.",
+      "Immersive preview of layout, lighting & textures.",
+      "Helps visualize design before construction.",
+    ],
+  },
 ];
 
 /* ===== Animation Variants ===== */
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-};
-
-const stagger = {
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 export default function Service() {
   return (
     <section className="bg-black text-white mt-[55px]">
 
-      {/* ================= TOP HERO ================= */}
+      {/* TOP HERO */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -63,7 +166,7 @@ export default function Service() {
         </div>
       </motion.div>
 
-      {/* ================= HERO IMAGE ================= */}
+      {/* HERO IMAGE */}
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -72,11 +175,7 @@ export default function Service() {
         className="px-6"
       >
         <div className="relative max-w-7xl mx-auto h-[500px] overflow-hidden rounded-2xl">
-          <img
-            src={planning}
-            alt="Hero"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={planning} alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
 
           <motion.div
@@ -97,7 +196,7 @@ export default function Service() {
         </div>
       </motion.div>
 
-      {/* ================= SERVICES TITLE ================= */}
+      {/* SERVICES TITLE */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -112,61 +211,53 @@ export default function Service() {
         </p>
       </motion.div>
 
-      {/* ================= ZIG ZAG SERVICES ================= */}
-<section className="bg-[#0f0f0f] text-white px-6">
-  <div className="max-w-7xl mx-auto space-y-32">
+      {/* ZIG-ZAG SERVICES */}
+      <section className="bg-[#0f0f0f] text-white px-6">
+        <div className="max-w-7xl mx-auto space-y-32">
 
-    {services.map((service, index) => {
-      const isReverse = index % 2 !== 0;
+          {services.map((service, index) => {
+            const isReverse = index % 2 !== 0;
 
-      return (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-        >
-          {/* IMAGE */}
-          <div className={`${isReverse ? "lg:order-2" : ""}`}>
-            <div className="relative h-[280px] sm:h-[380px] lg:h-[460px] overflow-hidden rounded-xl">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20" />
-            </div>
-          </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+              >
+                {/* IMAGE */}
+                <div className={`${isReverse ? "lg:order-2" : ""}`}>
+                  <div className="relative h-[280px] sm:h-[380px] lg:h-[460px] overflow-hidden rounded-xl">
+                    <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/20" />
+                  </div>
+                </div>
 
-          {/* CONTENT */}
-          <div className={`${isReverse ? "lg:order-1" : ""}`}>
-            <span className="text-xs tracking-widest text-yellow-400">
-              {index + 1 < 10 ? `0${index + 1}` : index + 1}
-            </span>
+                {/* CONTENT */}
+                <div className={`${isReverse ? "lg:order-1" : ""}`}>
+                  <span className="text-xs tracking-widest text-yellow-400">
+                    {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                  </span>
 
-            <h3 className="mt-4 text-xl sm:text-2xl font-semibold tracking-wide text-yellow-400 uppercase">
-              {service.title}
-            </h3>
+                  <h3 className="mt-4 text-xl sm:text-2xl font-semibold tracking-wide text-yellow-400 uppercase">
+                    {service.title}
+                  </h3>
 
-            <ul className="mt-6 space-y-3 text-gray-300 text-sm leading-relaxed">
-              <li>• 3D modeling of your chosen spaces</li>
-              <li>• Detailed furnishing & material detailing</li>
-              <li>• Multiple camera angles & views</li>
-              <li>• Scope for revisions & feedback</li>
-              <li>• High-resolution final output</li>
-            </ul>
-          </div>
-        </motion.div>
-      );
-    })}
+                  <ul className="mt-6 space-y-3 text-gray-300 text-sm leading-relaxed">
+                    {service.details.map((d, i) => (
+                      <li key={i}>• {d}</li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
-  </div>
-</section>
-
-
-      {/* ================= CTA ================= */}
+      {/* CTA */}
       <motion.section
         variants={fadeUp}
         initial="hidden"

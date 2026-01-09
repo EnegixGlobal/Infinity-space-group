@@ -5,12 +5,8 @@ import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
-  // Desktop portfolio
   const [showPortfolio, setShowPortfolio] = useState(false);
-  const [activeTab, setActiveTab] = useState("Exterior");
-
-  // Mobile portfolio
+  const [activeTab, setActiveTab] = useState(null);
   const [mobilePortfolio, setMobilePortfolio] = useState(false);
 
   useEffect(() => {
@@ -18,202 +14,148 @@ export default function Navbar() {
   }, [open]);
 
   const linkStyle =
-    "relative text-sm tracking-widest uppercase after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full";
+    "relative text-sm md:text-base tracking-widest uppercase after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full";
 
   const portfolioItems = [
-    { name: "Exterior", link: "/portfolio/exterior/residential" },
-    { name: "Interior", link: "/portfolio/interior/residential" },
-    { name: "Floor Plan", link: "/portfolio/floorplan" },
-    { name: "Isometric", link: "/portfolio/isometric" },
-    { name: "Landscape", link: "/portfolio/landscape" },
+    { name: "Exterior", hasSub: true },
+    { name: "Interior", hasSub: true },
+    { name: "Floor Plan", link: "/portfolio/floorplan", hasSub: false },
+    { name: "Isometric", link: "/portfolio/isometric", hasSub: false },
+    { name: "Landscape", link: "/portfolio/landscape", hasSub: false },
   ];
 
   return (
-    <>
-      {/* ================= HEADER ================= */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <Link to="/">
+          <img src={logo} alt="logo" className="h-10 sm:h-12 md:h-14" />
+        </Link>
 
-          {/* LOGO */}
-          <Link to="/">
-            <img src={logo} alt="logo" className="h-10 md:h-14" />
-          </Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-white">
+          <NavLink to="/about" className={linkStyle}>About</NavLink>
+          <NavLink to="/service" className={linkStyle}>Services</NavLink>
 
-          {/* ================= DESKTOP MENU ================= */}
-          <nav className="hidden md:flex items-center gap-10 text-white">
-            <NavLink to="/about" className={linkStyle}>About</NavLink>
-            <NavLink to="/service" className={linkStyle}>Services</NavLink>
+          {/* PORTFOLIO */}
+          <div
+            className="relative flex flex-col"
+            onMouseEnter={() => setShowPortfolio(true)}
+            onMouseLeave={() => {
+              setShowPortfolio(false);
+              setActiveTab(null);
+            }}
+          >
+            <span className={`${linkStyle} cursor-pointer`}>Portfolio</span>
 
-            {/* PORTFOLIO MEGA MENU */}
-            <div
-              className="relative flex flex-col"
-              onMouseEnter={() => setShowPortfolio(true)}
-              onMouseLeave={() => setShowPortfolio(false)}
-            >
-              <span className={`${linkStyle} cursor-pointer`}>
-                Portfolio
-              </span>
-
-              {showPortfolio && (
-                <div className="absolute top-full left-0 mt-1 w-[560px] bg-[#111] border border-white/10 flex z-50">
-                  
-                  {/* LEFT COLUMN */}
-                  <div className="w-1/2 bg-[#161616]">
-                    {portfolioItems.map((item, i) => (
+            {showPortfolio && (
+              <div className="absolute top-full left-0 mt-1 w-full lg:w-[560px] max-h-[80vh] overflow-auto bg-[#111] border border-white/10 flex z-50">
+                {/* LEFT LIST */}
+                <div className="w-1/2 bg-[#161616]">
+                  {portfolioItems.map((item, i) =>
+                    item.hasSub ? (
                       <div
                         key={i}
                         onMouseEnter={() => setActiveTab(item.name)}
-                        className={`block px-6 py-4 text-sm tracking-widest uppercase
-                          ${activeTab === item.name ? "bg-yellow-400 text-black" : "text-gray-300 hover:bg-[#222] cursor-pointer"}
-                        `}
+                        className={`px-4 sm:px-6 py-3 text-sm sm:text-base tracking-widest uppercase cursor-pointer transition
+                          ${activeTab === item.name
+                            ? "bg-yellow-400 text-black"
+                            : "text-gray-300 hover:bg-yellow-400 hover:text-black"
+                          }`}
                       >
                         {item.name}
                       </div>
-                    ))}
-                  </div>
+                    ) : (
+                      <Link
+                        key={i}
+                        to={item.link}
+                        onMouseEnter={() => setActiveTab(null)}
+                        onClick={() => setShowPortfolio(false)}
+                        className="block px-4 sm:px-6 py-3 text-sm sm:text-base tracking-widest uppercase text-gray-300 hover:bg-yellow-400 hover:text-black transition"
+                      >
+                        {item.name}
+                      </Link>
+                    )
+                  )}
+                </div>
 
-                  {/* RIGHT COLUMN */}
-                  <div className="w-1/2 px-6 py-6 space-y-4 text-sm tracking-widest uppercase">
+                {/* RIGHT PANEL */}
+                {activeTab && (activeTab === "Exterior" || activeTab === "Interior") && (
+                  <div className="w-1/2 px-4 sm:px-6 py-6 space-y-3 sm:space-y-4 text-sm sm:text-base tracking-widest uppercase">
                     {activeTab === "Exterior" && (
                       <>
-                        <Link
-                          to="/portfolio/exterior/residential"
-                          className="block text-gray-300 hover:text-yellow-400"
-                          onClick={() => setShowPortfolio(false)}
-                        >
-                          Residential
-                        </Link>
-                        <Link
-                          to="/portfolio/exterior/commercial"
-                          className="block text-gray-300 hover:text-yellow-400"
-                          onClick={() => setShowPortfolio(false)}
-                        >
-                          Commercial
-                        </Link>
+                        <Link to="/portfolio/exterior/residential" className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition" onClick={() => setShowPortfolio(false)}>Residential</Link>
+                        <Link to="/portfolio/exterior/commercial" className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition" onClick={() => setShowPortfolio(false)}>Commercial</Link>
                       </>
                     )}
-
                     {activeTab === "Interior" && (
                       <>
-                        <Link
-                          to="/portfolio/interior/residential"
-                          className="block text-gray-300 hover:text-yellow-400"
-                          onClick={() => setShowPortfolio(false)}
-                        >
-                          Residential
-                        </Link>
-                        <Link
-                          to="/portfolio/interior/commercial"
-                          className="block text-gray-300 hover:text-yellow-400"
-                          onClick={() => setShowPortfolio(false)}
-                        >
-                          Commercial
-                        </Link>
+                        <Link to="/portfolio/interior/residential" className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition" onClick={() => setShowPortfolio(false)}>Residential</Link>
+                        <Link to="/portfolio/interior/commercial" className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition" onClick={() => setShowPortfolio(false)}>Commercial</Link>
                       </>
                     )}
-
-                    {activeTab === "Floor Plan" && (
-                      <Link
-                        to="/portfolio/floorplan"
-                        className="block text-gray-300 hover:text-yellow-400"
-                        onClick={() => setShowPortfolio(false)}
-                      >
-                        Floor Plan
-                      </Link>
-                    )}
-
-                    {activeTab === "Isometric" && (
-                      <Link
-                        to="/portfolio/isometric"
-                        className="block text-gray-300 hover:text-yellow-400"
-                        onClick={() => setShowPortfolio(false)}
-                      >
-                        Isometric
-                      </Link>
-                    )}
-
-                    {activeTab === "Landscape" && (
-                      <Link
-                        to="/portfolio/landscape"
-                        className="block text-gray-300 hover:text-yellow-400"
-                        onClick={() => setShowPortfolio(false)}
-                      >
-                        Landscape
-                      </Link>
-                    )}
                   </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          <NavLink to="/blog" className={linkStyle}>Blog</NavLink>
+          <NavLink to="/contact" className={linkStyle}>Contact</NavLink>
+        </nav>
+
+        {/* DESKTOP CTA */}
+        <Link
+          to="/contact"
+          className="hidden md:block px-4 sm:px-6 py-2 border border-white text-white text-sm sm:text-base hover:bg-white hover:text-black transition"
+        >
+          Get Started
+        </Link>
+
+        {/* MOBILE HAMBURGER */}
+        <button className="md:hidden text-white text-2xl z-50" onClick={() => setOpen(!open)}>
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden fixed inset-0 bg-black text-white pt-28 px-4 sm:px-6 overflow-auto">
+          <div className="space-y-6 text-lg sm:text-xl tracking-widest uppercase">
+            <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/service" onClick={() => setOpen(false)}>Services</NavLink>
+
+            {/* MOBILE PORTFOLIO */}
+            <div>
+              <button className="w-full flex items-center justify-between py-2" onClick={() => setMobilePortfolio(!mobilePortfolio)}>
+                <span>Portfolio</span>
+                <FaChevronDown className={`transition ${mobilePortfolio ? "rotate-180" : ""}`} />
+              </button>
+              {mobilePortfolio && (
+                <div className="mt-2 ml-4 space-y-2 text-sm sm:text-base">
+                  <p className="text-gray-400">Exterior</p>
+                  <Link to="/portfolio/exterior/residential" onClick={() => setOpen(false)}>Residential</Link>
+                  <Link to="/portfolio/exterior/commercial" onClick={() => setOpen(false)}>Commercial</Link>
+
+                  <p className="text-gray-400 mt-2">Interior</p>
+                  <Link to="/portfolio/interior/residential" onClick={() => setOpen(false)}>Residential</Link>
+                  <Link to="/portfolio/interior/commercial" onClick={() => setOpen(false)}>Commercial</Link>
+
+                  <Link to="/portfolio/floorplan" onClick={() => setOpen(false)}>Floor Plan</Link>
+                  <Link to="/portfolio/isometric" onClick={() => setOpen(false)}>Isometric</Link>
+                  <Link to="/portfolio/landscape" onClick={() => setOpen(false)}>Landscape</Link>
                 </div>
               )}
             </div>
 
-            <NavLink to="/blog" className={linkStyle}>Blog</NavLink>
-            <NavLink to="/contact" className={linkStyle}>Contact</NavLink>
-          </nav>
+            <NavLink to="/blog" onClick={() => setOpen(false)}>Blog</NavLink>
+            <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
 
-          {/* CTA */}
-          <Link
-            to="/contact"
-            className="hidden md:block px-6 py-2 border border-white text-white text-sm hover:bg-white hover:text-black transition"
-          >
-            Get Started
-          </Link>
-
-          {/* MOBILE TOGGLE */}
-          <button
-            className="md:hidden text-white text-xl z-50"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <FaTimes /> : <FaBars />}
-          </button>
+            <Link to="/contact" onClick={() => setOpen(false)} className="block border border-white text-center py-3 mt-6">
+              Get Started
+            </Link>
+          </div>
         </div>
-      </header>
-
-      {/* ================= MOBILE MENU ================= */}
-      <div
-        className={`fixed inset-0 z-40 bg-black pt-28 px-6 text-white transition-transform duration-500 ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <nav className="flex flex-col gap-6 text-lg">
-
-          <NavLink onClick={() => setOpen(false)} to="/about">ABOUT</NavLink>
-          <NavLink onClick={() => setOpen(false)} to="/service">SERVICES</NavLink>
-
-          {/* MOBILE PORTFOLIO */}
-          <button
-            onClick={() => setMobilePortfolio(!mobilePortfolio)}
-            className="flex items-center justify-between uppercase tracking-widest"
-          >
-            Portfolio
-            <FaChevronDown
-              className={`transition-transform ${mobilePortfolio ? "rotate-180" : ""}`}
-            />
-          </button>
-
-          {mobilePortfolio && (
-            <div className="ml-4 flex flex-col gap-4 text-sm uppercase tracking-widest text-gray-300">
-              <Link onClick={() => setOpen(false)} to="/portfolio/exterior/residential">Exterior – Residential</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/exterior/commercial">Exterior – Commercial</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/interior/residential">Interior – Residential</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/interior/commercial">Interior – Commercial</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/floorplan">Floor Plan</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/isometric">Isometric</Link>
-              <Link onClick={() => setOpen(false)} to="/portfolio/landscape">Landscape</Link>
-            </div>
-          )}
-
-          <NavLink onClick={() => setOpen(false)} to="/blog">BLOG</NavLink>
-          <NavLink onClick={() => setOpen(false)} to="/contact">CONTACT</NavLink>
-
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-8 px-8 py-3 border border-white text-sm tracking-wide hover:bg-white hover:text-black transition"
-          >
-            Get Started
-          </Link>
-        </nav>
-      </div>
-    </>
+      )}
+    </header>
   );
 }
