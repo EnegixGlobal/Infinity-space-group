@@ -86,7 +86,11 @@ export default function Hero() {
           loop
           muted
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Optional dark overlay */}
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />

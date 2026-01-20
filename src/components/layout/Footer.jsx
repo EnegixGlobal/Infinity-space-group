@@ -16,7 +16,11 @@ export default function Footer() {
           muted
           loop
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={ctaVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
@@ -51,11 +55,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <Image
                 src="/logo.png"
-                className="h-10"
+                className="h-10 w-auto"
                 alt="logo"
                 width={40}
                 height={40}
                 unoptimized
+                priority
               />
               <h3 className="text-white text-lg">Infinity Space</h3>
             </div>
