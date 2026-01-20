@@ -43,7 +43,7 @@ const testimonials = [
     name: "Aman Verma",
   },
   {
-    text: "Very smooth experience. They explained everything clearly and the final result exceeded expectations.",
+    text: "Very smooth experience. They explained everything clearly and the final result exceeded expectations..",
     name: "Neha Sharma",
   },
   {
