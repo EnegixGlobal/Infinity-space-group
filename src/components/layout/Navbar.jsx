@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
-import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -38,7 +37,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
-            src={logo}
+            src="/logo.png"
             alt="logo"
             className="h-10 sm:h-12 md:h-14"
             width={56}
