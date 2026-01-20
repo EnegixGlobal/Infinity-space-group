@@ -5,6 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
+// Update this URL with URL copied from admin panel
+const logo = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768892316/infinity-space/logos/hero/z5v9nctt0mpsxl3lc67v.png"; // Replace with URL from admin panel
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -36,7 +39,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/">
           <img
-            src="/logo.png"
+            src={logo}
             alt="logo"
             className="h-10 sm:h-12 md:h-14 w-auto"
             width={56}

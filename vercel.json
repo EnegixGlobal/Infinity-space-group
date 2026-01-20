@@ -18,6 +18,11 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "src/app/api/video/route.js": {
+      "maxDuration": 600
+    }
+  }
 }
 
