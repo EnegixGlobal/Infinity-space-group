@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../assets/logo.png";
 // Video is now in public/assets/videos/
 const ctaVideo = "/assets/videos/ctavideo.mp4";
 
@@ -51,7 +50,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Image
-                src={logo}
+                src="/logo.png"
                 className="h-10"
                 alt="logo"
                 width={40}
