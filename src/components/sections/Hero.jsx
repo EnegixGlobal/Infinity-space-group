@@ -87,6 +87,9 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
+          onError={(e) => {
+            console.error('Video failed to load:', heroVideo);
+          }}
         >
           <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 // Video is now in public/assets/videos/
 const ctaVideo = "/assets/videos/ctavideo.mp4";
 
@@ -17,6 +16,9 @@ export default function Footer() {
           loop
           playsInline
           preload="auto"
+          onError={(e) => {
+            console.error('Video failed to load:', ctaVideo);
+          }}
         >
           <source src={ctaVideo} type="video/mp4" />
           Your browser does not support the video tag.
@@ -53,14 +55,12 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Image
+              <img
                 src="/logo.png"
                 className="h-10 w-auto"
                 alt="logo"
                 width={40}
                 height={40}
-                unoptimized
-                priority
               />
               <h3 className="text-white text-lg">Infinity Space</h3>
             </div>

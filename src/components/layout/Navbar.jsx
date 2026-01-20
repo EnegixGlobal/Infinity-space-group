@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,14 +35,12 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/">
-          <Image
+          <img
             src="/logo.png"
             alt="logo"
             className="h-10 sm:h-12 md:h-14 w-auto"
             width={56}
             height={56}
-            unoptimized
-            priority
           />
         </Link>
 
