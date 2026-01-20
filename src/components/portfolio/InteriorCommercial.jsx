@@ -4,63 +4,63 @@ import React, { useState } from "react";
 import { getImageSrc } from "@/lib/imageHelper";
 
 /* ===================== HOSPITAL ===================== */
-import dr1 from "../../assets/Interior-Commercial/hospital/dr chamber.jpg";
-import dr2 from "../../assets/Interior-Commercial/hospital/dr chamber1.jpg";
-import medi from "../../assets/Interior-Commercial/hospital/medi.jpg";
-import rec1 from "../../assets/Interior-Commercial/hospital/rec1.jpg";
-import rec2 from "../../assets/Interior-Commercial/hospital/rec2.jpg";
+const dr1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886504/infinity-space/interior-commercial/tadetmxxqi0usjl23zau.jpg";
+const dr2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886503/infinity-space/interior-commercial/pfqse9f0eqpdmletmisj.jpg";
+const medi = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886502/infinity-space/interior-commercial/t59ird5voglorvcak2pv.jpg";
+const rec1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886505/infinity-space/interior-commercial/e7kyve2yjrbkn17g9wab.jpg";
+const rec2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886505/infinity-space/interior-commercial/lhd4n08wkxewb8mwgmll.jpg";
 
 /* ===================== MS TRUEDENTAL CARE ===================== */
-import cabin1 from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/cabin1.jpg";
-import cabin2 from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/cabin.jpg";
-import reception from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/reciption.jpg";
-import reception2 from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/reciption22.jpg";
-import surgery1 from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/surgry area.jpg";
-import surgery2 from "../../assets/Interior-Commercial/MS TRUEDENTAL CARE/surgry area1.jpg";
+const cabin1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886676/infinity-space/interior-commercial/ofxsaw06m3ofczgias5m.jpg";
+const cabin2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886675/infinity-space/interior-commercial/txbelgzbnojo7undie0i.jpg";
+const reception = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886676/infinity-space/interior-commercial/vxj4iukfgvkrh4qubwhr.jpg";
+const reception2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886673/infinity-space/interior-commercial/c61daqomgmjubve6glys.jpg";
+const surgery1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886676/infinity-space/interior-commercial/scp39dznkb1ffo1runoe.jpg";
+const surgery2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886675/infinity-space/interior-commercial/h4eevnlltech7splpnfj.jpg";
 
 /* ===================== NAMKOM CANTT ===================== */
-import nam1 from "../../assets/Interior-Commercial/NAMKOM_CANTT/NAMKOM_CANTT1.jpg";
-import nam2 from "../../assets/Interior-Commercial/NAMKOM_CANTT/NAMKOM_CANTT c2.jpg";
-import nam3 from "../../assets/Interior-Commercial/NAMKOM_CANTT/NAMKOM_CANTT c3.jpg";
-import nam4 from "../../assets/Interior-Commercial/NAMKOM_CANTT/NAMKOM_CANTT2.jpg";
-import nam5 from "../../assets/Interior-Commercial/NAMKOM_CANTT/NAMKOM_CANTT.jpg";
+const nam1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886924/infinity-space/interior-commercial/uoj7sow8hzgbepziopxs.jpg";
+const nam2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886924/infinity-space/interior-commercial/cxm0g0sxjyvfm9nza38o.jpg";
+const nam3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886923/infinity-space/interior-commercial/xto3z6naquha7s1omykb.jpg";
+const nam4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886922/infinity-space/interior-commercial/g0k5vmhvjnsrup6wc8t6.jpg";
+const nam5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768886923/infinity-space/interior-commercial/qjk2ivf2oozvgcpvewp3.jpg";
 
 /* ===================== RESTAURANT CUM BAR ===================== */
-import count1 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/count.jpg";
-import count2 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/count1.jpg";
-import count3 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/count2.jpg";
-import rest1 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/rest.jpg";
-import rest2 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/rest2.jpg";
-import rest3 from "../../assets/Interior-Commercial/RESTAURANT_CUM_BAR/rest3.jpg";
+const count1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887152/infinity-space/interior-commercial/ry9jtqn4hqlcyzsqsnae.jpg";
+const count2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887152/infinity-space/interior-commercial/uclj3hramapxkf8muzqx.jpg";
+const count3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887153/infinity-space/interior-commercial/z29fkggj3edv7wxml1vd.jpg";
+const rest1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887149/infinity-space/interior-commercial/upojd3ubtuqawrmlosb3.jpg";
+const rest2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887151/infinity-space/interior-commercial/yk9kngdvx9nl2wtfgszm.jpg";
+const  rest3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887152/infinity-space/interior-commercial/qc3m0tz62dxllserkdox.jpg";
 
 /* ===================== BAR PLAN ===================== */
-import bar1 from "../../assets/Interior-Commercial/BAR PLAN/baar c3.jpg";
-import bar2 from "../../assets/Interior-Commercial/BAR PLAN/baar c5.jpg";
-import bar3 from "../../assets/Interior-Commercial/BAR PLAN/baar c6.jpg";
-import bar4 from "../../assets/Interior-Commercial/BAR PLAN/baar c7.jpg";
-import bar5 from "../../assets/Interior-Commercial/BAR PLAN/baar c11.jpg";
-import bar6 from "../../assets/Interior-Commercial/BAR PLAN/baar c22.jpg";
-import bar7 from "../../assets/Interior-Commercial/BAR PLAN/bar c1.jpg";
-import bar8 from "../../assets/Interior-Commercial/BAR PLAN/bar c2.jpg";
-import bar9 from "../../assets/Interior-Commercial/BAR PLAN/bar cam8 copy.jpg";
-import bar10 from "../../assets/Interior-Commercial/BAR PLAN/bar cam9 copy.jpg";
-import bar11 from "../../assets/Interior-Commercial/BAR PLAN/bar cam10 copy.jpg";
+const bar1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887387/infinity-space/interior-commercial/d6vyejeswcdf33k06pdl.jpg";
+const bar2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887387/infinity-space/interior-commercial/vx8gtdppcrgjvexl4lhp.jpg";
+const bar3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887388/infinity-space/interior-commercial/svmkjps78dkubztrudqm.jpg";
+const bar4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887387/infinity-space/interior-commercial/xmiyvdkhdwal3mvmgbhg.jpg";
+const bar5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887387/infinity-space/interior-commercial/o6l0yseg2gqwjgbl7yz6.jpg";
+const bar6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887388/infinity-space/interior-commercial/weqoamhjf04j16ue2xor.jpg";
+const bar7 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887391/infinity-space/interior-commercial/h1vzrmmxzq5pbmgym6no.jpg";
+const bar8 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887393/infinity-space/interior-commercial/sa9pagtnspgbjbquyvfc.jpg";
+const bar9 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887392/infinity-space/interior-commercial/ktnbx3zsqbpckm4ajuvj.jpg";
+const bar10 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887395/infinity-space/interior-commercial/s6wjyadxyjefwz9ovka4.jpg";
+const bar11 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887393/infinity-space/interior-commercial/qa0akuqmhndpu4qxrftv.jpg";
 
 /* ===================== OFFICE MODEL ===================== */
-import off1 from "../../assets/Interior-Commercial/fanta uncle office-Model/office c1.jpg";
-import off2 from "../../assets/Interior-Commercial/fanta uncle office-Model/office c2.jpg";
-import off3 from "../../assets/Interior-Commercial/fanta uncle office-Model/office c3.jpg";
-import off4 from "../../assets/Interior-Commercial/fanta uncle office-Model/office c4.jpg";
-import off5 from "../../assets/Interior-Commercial/fanta uncle office-Model/uncle office c2.jpg";
-import off6 from "../../assets/Interior-Commercial/fanta uncle office-Model/uncle office c3.jpg";
+const off1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887862/infinity-space/interior-commercial/sirrditccepfvaujdoqd.jpg";
+const off2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887861/infinity-space/interior-commercial/c3bdlz3tuorgiby8bnai.jpg";
+const off3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887869/infinity-space/interior-commercial/huzcm5yoj4mmcgq6r1q5.jpg";
+const off4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887862/infinity-space/interior-commercial/ae4uxlq9ayu9vx33qcra.jpg";
+const off5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887863/infinity-space/interior-commercial/oafrsmlhvlct0qksbgid.jpg";
+const off6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768887862/infinity-space/interior-commercial/kaac44hnzpm3juhp6vm5.jpg";
 
 /* ===================== GYM ===================== */
-import gym1 from "../../assets/Interior-Commercial/gym/THIRD FLOOR PLAN.jpg";
-import gym2 from "../../assets/Interior-Commercial/gym/bath c1 copy.jpg";
-import gym3 from "../../assets/Interior-Commercial/gym/bath c2 copy.jpg";
-import gym4 from "../../assets/Interior-Commercial/gym/gym22.jpg";
-import gym5 from "../../assets/Interior-Commercial/gym/gym33.jpg";
-import gym6 from "../../assets/Interior-Commercial/gym/gym111.jpg";
+const gym1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888250/infinity-space/interior-commercial/ghdk18mczej4bjd2ctk9.jpg";
+const gym2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888250/infinity-space/interior-commercial/n4a7cu9pjbyspgyca8en.jpg";
+const gym3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888249/infinity-space/interior-commercial/whx84nhyelgkjcjvuafk.jpg";
+const gym4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888239/infinity-space/interior-commercial/ezuuanriggdpblicz0gg.jpg";
+const gym5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888250/infinity-space/interior-commercial/gguaoqxcrnmuzf9ezakd.jpg";
+const gym6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768888240/infinity-space/interior-commercial/h6gbrr3rmdcxcbwq8xpu.jpg";
 
 export default function InteriorCommercial() {
   const projects = [

@@ -4,144 +4,144 @@ import React, { useState } from "react";
 import { getImageSrc } from "@/lib/imageHelper";
 
 /* ===================== ASHISH FRIEND ===================== */
-import ash1 from "../../assets/Interior-Residential/ashish friend/ashish friend m bed.jpg";
-import ash2 from "../../assets/Interior-Residential/ashish friend/ashish friend m bed11.jpg";
+const ash1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823385/infinity-space/interior-residential/ewqrjtyrgorrgmts83ej.jpg";
+const ash2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823426/infinity-space/interior-residential/ycslxjilvrcpisz66oii.jpg";
 
 /* ===================== BEDROOM ===================== */
-import bed1 from "../../assets/Interior-Residential/bedroom/bedroom c1 copy.jpg";
-import bed2 from "../../assets/Interior-Residential/bedroom/bedroom c2 copy.jpg";
-import bed3 from "../../assets/Interior-Residential/bedroom/bedroom c3 copy.jpg";
-import bed4 from "../../assets/Interior-Residential/bedroom/toilet  copy.jpg";
+const bed1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823487/infinity-space/interior-residential/boc0zcocitbxkvir4il8.jpg";
+const bed2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823491/infinity-space/interior-residential/ronfh1gq8ssgmqudajot.jpg";
+const bed3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823489/infinity-space/interior-residential/jx6lbnbgqmqnxkwrk6dt.jpg";
+const bed4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823480/infinity-space/interior-residential/avzdnsyob5megxsudbvg.jpg";
 
 /* ===================== DSP SIR ===================== */
-import dsp1 from "../../assets/Interior-Residential/DSP_SIR_-_27.06.23/bedroom c1.jpg";
-import dsp2 from "../../assets/Interior-Residential/DSP_SIR_-_27.06.23/bedroom c2.jpg";
-import dsp3 from "../../assets/Interior-Residential/DSP_SIR_-_27.06.23/living c1.jpg";
-import dsp4 from "../../assets/Interior-Residential/DSP_SIR_-_27.06.23/living c2.jpg";
-import dsp5 from "../../assets/Interior-Residential/DSP_SIR_-_27.06.23/living c11.jpg";
+const dsp1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823699/infinity-space/interior-residential/vty8agcswazzfcfsrenn.jpg";
+const dsp2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823694/infinity-space/interior-residential/vnxzw0fmct3ti50jvolh.jpg";
+const dsp3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823700/infinity-space/interior-residential/b8ykodh2hihem96jyqfx.jpg";
+const dsp4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823701/infinity-space/interior-residential/hbnppomouxujmukouv2b.jpg";
+const dsp5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768823704/infinity-space/interior-residential/llp9lwjoy3qjvqax7qj3.jpg";
 
 /* ===================== KIDS ===================== */
-import kid1 from "../../assets/Interior-Residential/kids/kids c1 copy.jpg";
-import kid2 from "../../assets/Interior-Residential/kids/kids c2 copy.jpg";
-import kid3 from "../../assets/Interior-Residential/kids/kids c111.jpg";
-import kid4 from "../../assets/Interior-Residential/kids/kids c1111.jpg";
+const kid1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824006/infinity-space/interior-residential/m7kp9c7qdmtyfff8khfv.jpg";
+const kid2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824006/infinity-space/interior-residential/wcngv0btmnld5glelzan.jpg";
+const kid3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824005/infinity-space/interior-residential/ak2bvxz3ptq7kgxwiln1.jpg";
+const kid4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824006/infinity-space/interior-residential/tk0xmfs0a9i9ek5rprmh.jpg";
 
 /* ===================== MR RAM RATAN ===================== */
-import ram1 from "../../assets/Interior-Residential/MR._RAM_RATAN_BARNWAL_C.O._SAHAB/1st living c1 p.jpg";
-import ram2 from "../../assets/Interior-Residential/MR._RAM_RATAN_BARNWAL_C.O._SAHAB/1st living c2 p.jpg";
+const ram1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824168/infinity-space/interior-residential/sg4m2bwdkjxxgypsnrlf.jpg";
+const ram2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824171/infinity-space/interior-residential/j2nfew1lmdduvssqo1pq.jpg";
 
 /* ===================== MANISH KUMAR ===================== */
-import mk1 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Bedroom 2.1.jpg";
-import mk2 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Bedroom 2.jpg";
+const mk1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824370/infinity-space/interior-residential/hgoyo7e7eqy8lw0cxjdc.jpg";
+const mk2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824377/infinity-space/interior-residential/ikedwqnm1wocljimwl21.jpg";
 
-import mk3 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c2.jpg";
-import mk4 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c3.jpg";
-import mk5 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c4.jpg";
-import mk6 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c5.jpg";
-import mk7 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c6.jpg";
-import mk8 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining c8.jpg";
+const mk3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824358/infinity-space/interior-residential/k0hwe1q4usaufojswcj0.jpg";
+const mk4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824358/infinity-space/interior-residential/zkldfy6ovd43ajfhrwck.jpg";
+const mk5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824358/infinity-space/interior-residential/n04idrckk2cuvwcmclws.jpg";
+const mk6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824375/infinity-space/interior-residential/danlqnbzxdk50iczjk5g.jpg";
+const mk7 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824354/infinity-space/interior-residential/awucjhx6oe2k3afbz5ev.jpg";
+const mk8 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824344/infinity-space/interior-residential/quwsxmcxvju09x67zhrf.jpg";
 
-import mk9 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining.jpg";
-import mk10 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/1st F Living & Dining1.jpg";
+const mk9 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824375/infinity-space/interior-residential/ron540joeiopdowycdz6.jpg";
+const mk10 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824379/infinity-space/interior-residential/qvgtzznrcxew0xcmu9xy.jpg";
 
-import mk11 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/2nd f bedroom 2.jpg";
-import mk12 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/2nd f bedroom 21.jpg";
-import mk13 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/2nd f bedroom.jpg";
-import mk14 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/2nd f bedrooms.jpg";
+const mk11 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824414/infinity-space/interior-residential/ognq3t0emua8hgmicvaq.jpg";
+const mk12 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824394/infinity-space/interior-residential/km6n16njrtsrbloiteqd.jpg";
+const mk13 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824414/infinity-space/interior-residential/nkzepaloktyxifeqmiq2.jpg";
+const mk14 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824387/infinity-space/interior-residential/cejfjzmupwi69d3myzj9.jpg";
 
-import mk15 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/cam 1.jpg";
-import mk16 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/cam 2.jpg";
+const mk15 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824398/infinity-space/interior-residential/gm61llecso7jdnyenhlj.jpg";
+const mk16 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824412/infinity-space/interior-residential/ovbib8zhh9lncjgihidf.jpg";
 
-import mk17 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/ENTERTAINMENT ROOM.jpg";
-import mk18 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/ENTERTAINMENT ROOM1.jpg";
+const mk17 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824374/infinity-space/interior-residential/fghgr45jmftwt8nhrneq.jpg";
+const mk18 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824365/infinity-space/interior-residential/cg2jmp40osfzdtbrs1ws.jpg";
 
-import mk19 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/G Bed room.jpg";
-import mk20 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/G Bed rooom.jpg";
-import mk21 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/G bedroom 2.2.jpg";
-import mk22 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/G bedroom 2.jpg";
+const mk19 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824399/infinity-space/interior-residential/zdqhjczethejev9t8uup.jpg";
+const mk20 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824413/infinity-space/interior-residential/pzx5ghgeikmbf7xk5ycw.jpg";
+const mk21 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824357/infinity-space/interior-residential/ebhkhs4w9ay90cpia5jq.jpg";
+const mk22 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824343/infinity-space/interior-residential/e1i03iqfks6tcleucaoz.jpg";
 
-import mk23 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/kitchen.jpg";
-import mk24 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/kitchen1.jpg";
+const mk23 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824379/infinity-space/interior-residential/bvwmthfejzalrxoxeyux.jpg";
+const mk24 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824384/infinity-space/interior-residential/i0wd7ff1ybmsn9mb3aec.jpg";
 
-import mk25 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/liv.jpg";
-import mk26 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/living.jpg";
+const mk25 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824415/infinity-space/interior-residential/abqmnjirck8m9jt6blig.jpg";
+const mk26 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824435/infinity-space/interior-residential/xugnd19gbgdp6jy5brft.jpg";
 
-import mk27 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/M Bedrom 1.jpg";
-import mk28 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/M Bedrom 2.jpg";
-import mk29 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/M Bedrom dressing.jpg";
-import mk30 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/M Bedrom toilet 2.jpg";
-import mk31 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/M Bedrom toilet.jpg";
+const mk27 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824385/infinity-space/interior-residential/bwh38oll7pmntnrxu9wl.jpg";
+const mk28 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824436/infinity-space/interior-residential/lsapyxqcesopagrzuu3l.jpg";
+const mk29 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824365/infinity-space/interior-residential/wf8dv7nuxjqtp8fkqpj5.jpg";
+const mk30 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824375/infinity-space/interior-residential/drvpgmmj3frl3k75k4sb.jpg";
+const mk31 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824353/infinity-space/interior-residential/dspl5kvbwngqy1iwrcsv.jpg";
 
-import mk32 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/Puja room c1.jpg";
-import mk33 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/Puja room c2.jpg";
-import mk34 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/Puja room c22.jpg";
-import mk35 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/Puja room cc.jpg";
+const mk32 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824437/infinity-space/interior-residential/lxgqziialweclbs5llkf.jpg";
+const mk33 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824427/infinity-space/interior-residential/cbesuwb90x6dvwsmweoz.jpg";
+const mk34 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824437/infinity-space/interior-residential/lyxgbelhnydutqvfy6zn.jpg";
+const mk35 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824398/infinity-space/interior-residential/r6gfstpijnv1uyzfhgsp.jpg";
 
-import mk36 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/study room 1.jpg";
-import mk37 from "../../assets/Interior-Residential/25_wd_MANISH_KUMAR__HOUSING_COLONY_BARIYATU/study room 2.jpg";
+const mk36 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824433/infinity-space/interior-residential/xwb1wagofestdcz4a9ga.jpg";
+const mk37 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768824422/infinity-space/interior-residential/theljcuttmvjlpfblfis.jpg";
 
 
 /* ===================== SONU ===================== */
-import sonu1 from "../../assets/Interior-Residential/Sonu/kit 1.jpg";
-import sonu2 from "../../assets/Interior-Residential/Sonu/kit111.jpg";
-import sonu3 from "../../assets/Interior-Residential/Sonu/we2e.jpg";
+const sonu1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826422/infinity-space/interior-residential/s3nvcdrwxnaa89n6mhjj.jpg";
+const sonu2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826421/infinity-space/interior-residential/odier2go5aaglmqvibu8.jpg";
+const sonu3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826422/infinity-space/interior-residential/b2fvdd4oed4jwn8w3oxm.jpg";
 
 /* ===================== ZR HALL ===================== */
-import zr1 from "../../assets/Interior-Residential/Z R -  HALL 1/cam 11.jpg";
+const zr1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826520/infinity-space/interior-residential/eadpakjmhbp6dgmkvj7q.jpg";
 
 /* ===================== ZAFAR IQBAL ===================== */
-import far1 from "../../assets/Interior-Residential/Zafar Iqbal For 3d in/1.png";
-import far2 from "../../assets/Interior-Residential/Zafar Iqbal For 3d in/2.png";
+const far1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826616/infinity-space/interior-residential/vhxloe2fvpk1mwmtdlmb.png";
+const far2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768826614/infinity-space/interior-residential/tpvyziyzjgr6mmn2obd8.png";
 
 /* ===================== UTTAM PRASAD ===================== */
-import up1 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/Daughter 1.jpg";
-import up2 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/Daughter 11.jpg";
+const up1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882234/infinity-space/interior-residential/uqdoqzuhi21vqtlapjwv.jpg";
+const up2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882279/infinity-space/interior-residential/vfxbntbg445hefvnpqix.jpg";
 
-import up3 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/dining.jpg";
-import up4 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/dining11.jpg";
+const up3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882327/infinity-space/interior-residential/jsutpwjvakjnzg9vjax9.jpg";
+const up4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882325/infinity-space/interior-residential/ctxufg52hewkaqwaubfg.jpg";
 
-import up5 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/kit cam fd.jpg";
-import up6 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/kit cam.jpg";
+const up5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882409/infinity-space/interior-residential/inaihjwycfkj6ri96rub.jpg";
+const up6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882409/infinity-space/interior-residential/ramr3ce3rf5dwk6svngr.jpg";
 
-import up7 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/kitchen .jpg";
+const up7 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882474/infinity-space/interior-residential/lqsaapc1syshbmwsdgqb.jpg";
 
-import up8 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/M bed 1.jpg";
-import up9 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/M bed 11.jpg";
+const up8 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882546/infinity-space/interior-residential/dbfr02pet62uvguwqdeg.jpg";
+const up9 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882546/infinity-space/interior-residential/mlyrxfzpahvetr55vroj.jpg";
 
 
-import up11 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/Master 1st cam 1.jpg";
-import up12 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/Master 1st cam 2.jpg";
-import up13 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/Master 1st cam 3.jpg";
+const up11 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882544/infinity-space/interior-residential/rghxk4jdcrayhwxwejoy.jpg";
+const up12 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882544/infinity-space/interior-residential/mu58vlbdgmhb16t6apkt.jpg";
+const up13 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768882546/infinity-space/interior-residential/lstfkizztivwfcwo2yth.jpg";
 
-import up14 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/master.jpg";
-import up15 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/master2.jpg";
+const up14 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883846/infinity-space/interior-residential/jweby8j1p2qcqscbior8.jpg";
+const up15 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883844/infinity-space/interior-residential/gr0s4bstyf3urvnfn1xj.jpg";
 
-import up16 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/off cam 2.jpg";
-import up17 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/off cam 3.jpg";
-import up18 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/off cam 4.jpg";
-import up19 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/off cam 5.jpg";
+const up16 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883942/infinity-space/interior-residential/yonfpg5dhnsrhhhmrath.jpg";
+const up17 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883940/infinity-space/interior-residential/mxcaglzui9sgsedjw3cf.jpg";
+const up18 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883941/infinity-space/interior-residential/frgpmpmc8bpspiiengsr.jpg";
+const up19 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768883941/infinity-space/interior-residential/ridvqgrsnvjrv6dtd7cf.jpg";
 
-import up20 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/son 11.jpg";
-import up21 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/son 12.jpg";
+const up20 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768884078/infinity-space/interior-residential/nsrdpn9sdh4zlksjnbt3.jpg";
+const up21 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768884076/infinity-space/interior-residential/hybxtlzcwsv8x6zgz91s.jpg";
 
-import up22 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/study.jpg";
-import up23 from "../../assets/Interior-Residential/UTTAM_PRASAD___B.D.O._SAHAB/study1.jpg";
+const up22 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768884166/infinity-space/interior-residential/ccrjk4aemfiis1msgaf6.jpg";
+const up23 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768884166/infinity-space/interior-residential/en2ko2kbahgm8fciylai.jpg";
 
 
 /* ===================== SATENDER ===================== */
-import sat1 from "../../assets/Interior-Residential/Satender/Bedromm 1.1.jpg";
-import sat2 from "../../assets/Interior-Residential/Satender/Bedromm 1.jpg";
-import sat3 from "../../assets/Interior-Residential/Satender/Bedromm 2.1.jpg";
-import sat4 from "../../assets/Interior-Residential/Satender/Bedromm 2.jpg";
-import sat5 from "../../assets/Interior-Residential/Satender/dining.jpg";
-import sat6 from "../../assets/Interior-Residential/Satender/kitchen 12.jpg";
-import sat7 from "../../assets/Interior-Residential/Satender/kitchen11.jpg";
-import sat8 from "../../assets/Interior-Residential/Satender/living 2.jpg";
-import sat9 from "../../assets/Interior-Residential/Satender/living21.jpg";
-import sat10 from "../../assets/Interior-Residential/Satender/m bed  copy.jpg";
-import sat11 from "../../assets/Interior-Residential/Satender/m bed 2 copy.jpg";
-import sat12 from "../../assets/Interior-Residential/Satender/m bed 22 copy.jpg";
-import sat13 from "../../assets/Interior-Residential/Satender/walking closet copy.jpg";
+const sat1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885727/infinity-space/interior-residential/ob8itp090xhqhxuur54z.jpg";
+const sat2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885722/infinity-space/interior-residential/nhcqn1qwfaxskue5kyo9.jpg";
+const sat3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885726/infinity-space/interior-residential/vnwdqtltjdz0lplj0eqc.jpg";
+const sat4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885725/infinity-space/interior-residential/axr0ltpvz9kosy0uissp.jpg";
+const sat5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885719/infinity-space/interior-residential/kexndivuengzh8p2vec8.jpg";
+const sat6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885725/infinity-space/interior-residential/nugtawrpiqen9eoiliz5.jpg";
+const sat7 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885726/infinity-space/interior-residential/ostlv0mjhyfu6lgqs5es.jpg";
+const sat8 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885719/infinity-space/interior-residential/aop2baywgvristilozpw.jpg";
+const sat9 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885720/infinity-space/interior-residential/m82cizzsfaoy4esx2j2n.jpg";
+const sat10 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885720/infinity-space/interior-residential/mkahvvrba95jriq3uyfz.jpg";
+const sat11 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885725/infinity-space/interior-residential/vytoeyrps8xufsnppjdu.jpg";
+const sat12 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885720/infinity-space/interior-residential/s7hvfzjzktabsd0vlgiv.jpg";
+const sat13 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768885719/infinity-space/interior-residential/jea36gbvibzzihst4qvs.jpg";
 
 export default function InteriorResidential() {
   const projects = [
