@@ -4,8 +4,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { getImageSrc } from "@/lib/imageHelper";
-// Video is now in public/assets/videos/
-const heroVideo = "/assets/videos/herovideobg.mp4";
 // Image URLs - update these with URLs copied from admin panel
 const imgRight = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768632721/infinity-space/hero/pslwby4vdlzu7lkze2rs.jpg";
 const imgCenter = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768633202/infinity-space/hero/egzoous4vf4drcedoijf.jpg";
@@ -66,7 +64,11 @@ const testimonials = [
   },
 ];
 
+// Update this URL with URL copied from admin panel
+const heroVideo = "/assets/videos/herovideobg.mp4"; // Replace with URL from admin panel
+
 export default function Hero() {
+
   // Use the manually set image URLs (update these with URLs from admin panel)
   const imgRightSrc = getImageSrc(imgRight);
   const imgCenterSrc = getImageSrc(imgCenter);

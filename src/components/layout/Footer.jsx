@@ -1,26 +1,29 @@
 import React from "react";
 import Link from "next/link";
-// Video is now in public/assets/videos/
-const ctaVideo = "/assets/videos/ctavideo.mp4";
+
+// Update these URLs with URLs copied from admin panel
+const footerLogo = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768892316/infinity-space/logos/hero/z5v9nctt0mpsxl3lc67v.png"; // Replace with URL from admin panel
+const footerVideo = "https://res.cloudinary.com/dit7znqkl/video/upload/v1768892467/infinity-space/videos/footer/ts2fy48gdqgrqwaxe75e.mp4"; // Replace with URL from admin panel
 
 export default function Footer() {
+
   return (
     <section className="bg-black text-gray-400 overflow-hidden">
       {/* ================= CTA SECTION ================= */}
       <div className="relative h-[75vh] min-h-[520px]">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src={ctaVideo}
+          src={footerVideo}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           onError={(e) => {
-            console.error('Video failed to load:', ctaVideo);
+            console.error('Video failed to load:', footerVideo);
           }}
         >
-          <source src={ctaVideo} type="video/mp4" />
+          <source src={footerVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/60" />
@@ -56,7 +59,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/logo.png"
+                src={footerLogo}
                 className="h-10 w-auto"
                 alt="logo"
                 width={40}

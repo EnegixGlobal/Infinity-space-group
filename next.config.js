@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Increase body size limit for API routes (150MB for large video uploads)
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '150mb',
+    },
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     unoptimized: false,
