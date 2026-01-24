@@ -5,16 +5,13 @@ import { getImageSrc } from "@/lib/imageHelper";
 
 /* ===== ISOMETRIC IMAGES ===== */
 const isoView = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815367/infinity-space/isometric/lcqfdadrgomkwpowktp0.jpg";
-const iso1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815411/infinity-space/isometric/gqghyfqsb1v9aqfjqsoi.jpg";
-const iso2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815540/infinity-space/isometric/reah2qgxb28evhyz8mmp.jpg";
-const iso3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815607/infinity-space/isometric/ipnj5mzez24dkm1f4e33.jpg";
-const iso4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815646/infinity-space/isometric/pkmedvqckbixwco7yqce.jpg";
-const iso5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815659/infinity-space/isometric/bruxxmzrozkgdhxwwesl.jpg";
+
+
 const iso6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815695/infinity-space/isometric/owsuddu25tbjixyzdlqo.jpg";
-const iso7 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815713/infinity-space/isometric/i5fzby87qmeieja1m1cj.jpg";
+
 const iso8 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815740/infinity-space/isometric/qb3e4nzgrwdlxghochyj.jpg";
 const iso9 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815754/infinity-space/isometric/ejp0zndbsc6qoi1s1s62.jpg";
-const iso10 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815777/infinity-space/isometric/v7uzpo3gwusgt4ledzb1.jpg";
+
 const iso11 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815797/infinity-space/isometric/wgynbtctofskf3j47uii.jpg";
 const iso12 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815811/infinity-space/isometric/ppbbhedwydxzsamxw5wr.jpg";
 const iso13 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815833/infinity-space/isometric/og2inxgkj90plyz9htjs.jpg";
@@ -25,8 +22,8 @@ export default function Isometric() {
 
   const images = [
     isoView,
-    iso1, iso2, iso3, iso4, iso5, iso6, iso7,
-    iso8, iso9, iso10, iso11, iso12, iso13, iso14, iso15
+    iso6, 
+    iso8, iso9, iso11, iso12, iso13, iso14, iso15
   ];
 
   return (

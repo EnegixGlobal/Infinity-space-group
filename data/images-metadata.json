@@ -113,24 +113,6 @@
   ],
   "service": [
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637271/infinity-space/service/weexemtmn7msxdf5f92v.jpg",
-      "publicId": "infinity-space/service/weexemtmn7msxdf5f92v",
-      "fileName": "planning.avif",
-      "uploadedAt": "2026-01-17T08:07:26.366Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637440/infinity-space/service/mmxh9xnl40tyaeuznfj4.jpg",
-      "publicId": "infinity-space/service/mmxh9xnl40tyaeuznfj4",
-      "fileName": "interior.webp",
-      "uploadedAt": "2026-01-17T08:10:14.802Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637481/infinity-space/service/slmgfdvfzsmexzm8vaxq.jpg",
-      "publicId": "infinity-space/service/slmgfdvfzsmexzm8vaxq",
-      "fileName": "structure.webp",
-      "uploadedAt": "2026-01-17T08:10:56.498Z"
-    },
-    {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637562/infinity-space/service/ngm7ocbogzq4pqijb9fe.jpg",
       "publicId": "infinity-space/service/ngm7ocbogzq4pqijb9fe",
       "fileName": "material.webp",
@@ -161,16 +143,58 @@
       "uploadedAt": "2026-01-17T08:14:09.021Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637696/infinity-space/service/mbjlnatfmbfbpcm0igor.jpg",
-      "publicId": "infinity-space/service/mbjlnatfmbfbpcm0igor",
-      "fileName": "approval.jpg",
-      "uploadedAt": "2026-01-17T08:14:35.576Z"
-    },
-    {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637718/infinity-space/service/xzbzzmah2xxkvwnamtyl.jpg",
       "publicId": "infinity-space/service/xzbzzmah2xxkvwnamtyl",
       "fileName": "walkthrough.jpg",
       "uploadedAt": "2026-01-17T08:14:55.804Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769240917/infinity-space/service/txq6tiushis4n6taa4hi.jpg",
+      "publicId": "infinity-space/service/txq6tiushis4n6taa4hi",
+      "fileName": "planing1.jpeg",
+      "uploadedAt": "2026-01-24T07:48:39.975Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769241669/infinity-space/service/r1hwkdqayeh7zlwixvet.jpg",
+      "publicId": "infinity-space/service/r1hwkdqayeh7zlwixvet",
+      "fileName": "structuraldesign.webp",
+      "uploadedAt": "2026-01-24T08:01:10.145Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/k1w5gp0pt0pdeihlkfvg.jpg",
+      "publicId": "infinity-space/service/k1w5gp0pt0pdeihlkfvg",
+      "fileName": "exteriordesigning.jpeg",
+      "uploadedAt": "2026-01-24T08:19:49.173Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/qfmr6iyxo4gwh0nsr6kr.jpg",
+      "publicId": "infinity-space/service/qfmr6iyxo4gwh0nsr6kr",
+      "fileName": "interiordesigning.jpeg",
+      "uploadedAt": "2026-01-24T08:19:49.277Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/yvim2bzkx6wqzewomoka.jpg",
+      "publicId": "infinity-space/service/yvim2bzkx6wqzewomoka",
+      "fileName": "landscaping.webp",
+      "uploadedAt": "2026-01-24T08:19:49.754Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/q4xpvoqarhmkfzzakma6.jpg",
+      "publicId": "infinity-space/service/q4xpvoqarhmkfzzakma6",
+      "fileName": "estimating&costing.jpeg",
+      "uploadedAt": "2026-01-24T08:19:49.950Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/nsfditq2gjalmvfjlnnl.jpg",
+      "publicId": "infinity-space/service/nsfditq2gjalmvfjlnnl",
+      "fileName": "mapapprovalnaksha.jpeg",
+      "uploadedAt": "2026-01-24T08:19:50.217Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/au1y0onqlwcheyc07qit.jpg",
+      "publicId": "infinity-space/service/au1y0onqlwcheyc07qit",
+      "fileName": "turnkeyprojects.jpeg",
+      "uploadedAt": "2026-01-24T08:19:51.987Z"
     }
   ],
   "exterior-residential": [
@@ -823,46 +847,10 @@
       "uploadedAt": "2026-01-19T09:35:36.769Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815411/infinity-space/isometric/gqghyfqsb1v9aqfjqsoi.jpg",
-      "publicId": "infinity-space/isometric/gqghyfqsb1v9aqfjqsoi",
-      "fileName": "isometric1.jpeg",
-      "uploadedAt": "2026-01-19T09:36:18.065Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815540/infinity-space/isometric/reah2qgxb28evhyz8mmp.jpg",
-      "publicId": "infinity-space/isometric/reah2qgxb28evhyz8mmp",
-      "fileName": "isometric2.jpeg",
-      "uploadedAt": "2026-01-19T09:38:28.047Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815607/infinity-space/isometric/ipnj5mzez24dkm1f4e33.jpg",
-      "publicId": "infinity-space/isometric/ipnj5mzez24dkm1f4e33",
-      "fileName": "isometric3.jpeg",
-      "uploadedAt": "2026-01-19T09:39:34.121Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815646/infinity-space/isometric/pkmedvqckbixwco7yqce.jpg",
-      "publicId": "infinity-space/isometric/pkmedvqckbixwco7yqce",
-      "fileName": "isometric4.jpeg",
-      "uploadedAt": "2026-01-19T09:40:13.782Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815659/infinity-space/isometric/bruxxmzrozkgdhxwwesl.jpg",
-      "publicId": "infinity-space/isometric/bruxxmzrozkgdhxwwesl",
-      "fileName": "isometric5.jpeg",
-      "uploadedAt": "2026-01-19T09:40:26.842Z"
-    },
-    {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815695/infinity-space/isometric/owsuddu25tbjixyzdlqo.jpg",
       "publicId": "infinity-space/isometric/owsuddu25tbjixyzdlqo",
       "fileName": "isometric6.jpeg",
       "uploadedAt": "2026-01-19T09:41:02.566Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815713/infinity-space/isometric/i5fzby87qmeieja1m1cj.jpg",
-      "publicId": "infinity-space/isometric/i5fzby87qmeieja1m1cj",
-      "fileName": "isometric7.jpeg",
-      "uploadedAt": "2026-01-19T09:41:20.520Z"
     },
     {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815740/infinity-space/isometric/qb3e4nzgrwdlxghochyj.jpg",
@@ -875,12 +863,6 @@
       "publicId": "infinity-space/isometric/ejp0zndbsc6qoi1s1s62",
       "fileName": "isometric9.jpeg",
       "uploadedAt": "2026-01-19T09:42:01.705Z"
-    },
-    {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815777/infinity-space/isometric/v7uzpo3gwusgt4ledzb1.jpg",
-      "publicId": "infinity-space/isometric/v7uzpo3gwusgt4ledzb1",
-      "fileName": "isometric10.jpeg",
-      "uploadedAt": "2026-01-19T09:42:24.976Z"
     },
     {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815797/infinity-space/isometric/wgynbtctofskf3j47uii.jpg",

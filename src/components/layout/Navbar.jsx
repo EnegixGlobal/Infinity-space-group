@@ -1,154 +1,138 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
-// Update this URL with URL copied from admin panel
-const logo = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768892316/infinity-space/logos/hero/z5v9nctt0mpsxl3lc67v.png"; // Replace with URL from admin panel
+const logo =
+  "https://res.cloudinary.com/dit7znqkl/image/upload/v1768892316/infinity-space/logos/hero/z5v9nctt0mpsxl3lc67v.png";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const [menuOpen, setMenuOpen] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
   const [mobilePortfolio, setMobilePortfolio] = useState(false);
-  const pathname = usePathname();
 
+  /* Lock scroll when mobile menu is open */
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "auto";
-  }, [open]);
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [menuOpen]);
+
+  /* Close menu on route change */
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobilePortfolio(false);
+    setShowPortfolio(false);
+  }, [pathname]);
 
   const linkStyle =
-    "relative text-sm md:text-base tracking-widest uppercase after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full";
+    "relative uppercase tracking-widest text-sm after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-white after:transition-all hover:after:w-full";
 
-  const activeLinkStyle = (path) => {
-    return pathname === path ? `${linkStyle} after:w-full` : linkStyle;
-  };
-
-  const portfolioItems = [
-    { name: "Exterior", hasSub: true },
-    { name: "Interior", hasSub: true },
-    { name: "Floor Plan", link: "/portfolio/floorplan", hasSub: false },
-    { name: "Isometric", link: "/portfolio/isometric", hasSub: false },
-    { name: "Landscape", link: "/portfolio/landscape", hasSub: false },
-  ];
+  const activeLink = (path) =>
+    pathname === path ? `${linkStyle} after:w-full` : linkStyle;
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/">
-          <img
-            src={logo}
-            alt="logo"
-            className="h-10 sm:h-12 md:h-14 w-auto"
-            width={56}
-            height={56}
-          />
+    <header className="fixed top-0 left-0 w-full bg-black z-50">
+      {/* TOP BAR */}
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* LOGO */}
+        <Link href="/" aria-label="Home">
+          <img src={logo} alt="Infinity Space Group" className="h-10 sm:h-12" />
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-white">
-          <Link href="/about" className={activeLinkStyle("/about")}>
+        {/* DESKTOP MENU */}
+        <nav className="hidden md:flex items-center gap-8 text-white">
+          <Link href="/about" className={activeLink("/about")}>
             About
           </Link>
-          <Link href="/service" className={activeLinkStyle("/service")}>
+
+          <Link href="/service" className={activeLink("/service")}>
             Services
           </Link>
 
-          {/* PORTFOLIO */}
+          {/* PORTFOLIO DESKTOP */}
           <div
-            className="relative flex flex-col"
+            className="relative"
             onMouseEnter={() => setShowPortfolio(true)}
             onMouseLeave={() => {
               setShowPortfolio(false);
               setActiveTab(null);
             }}
           >
-            <span className={`${linkStyle} cursor-pointer`}>Portfolio</span>
+            <span className={`${linkStyle} cursor-pointer`}>
+              Portfolio
+            </span>
 
             {showPortfolio && (
-              <div className="absolute top-full left-0 mt-1 w-full lg:w-[560px] max-h-[80vh] overflow-auto bg-[#111] border border-white/10 flex z-50">
-                {/* LEFT LIST */}
+              <div className="absolute top-full left-0 mt-2 w-[560px] bg-[#111] border border-white/10 flex">
+                {/* LEFT */}
                 <div className="w-1/2 bg-[#161616]">
-                  {portfolioItems.map((item, i) =>
-                    item.hasSub ? (
-                      <div
-                        key={i}
-                        onMouseEnter={() => setActiveTab(item.name)}
-                        className={`px-4 sm:px-6 py-3 text-sm sm:text-base tracking-widest uppercase cursor-pointer transition
-                          ${
-                            activeTab === item.name
-                              ? "bg-yellow-400 text-black"
-                              : "text-gray-300 hover:bg-yellow-400 hover:text-black"
-                          }`}
-                      >
-                        {item.name}
-                      </div>
-                    ) : (
-                      <Link
-                        key={i}
-                        href={item.link}
-                        onMouseEnter={() => setActiveTab(null)}
-                        onClick={() => setShowPortfolio(false)}
-                        className="block px-4 sm:px-6 py-3 text-sm sm:text-base tracking-widest uppercase text-gray-300 hover:bg-yellow-400 hover:text-black transition"
-                      >
-                        {item.name}
-                      </Link>
-                    )
-                  )}
+                  {["Exterior", "Interior"].map((item) => (
+                    <div
+                      key={item}
+                      onMouseEnter={() => setActiveTab(item)}
+                      className={`px-6 py-3 cursor-pointer uppercase transition ${
+                        activeTab === item
+                          ? "bg-yellow-400 text-black"
+                          : "text-gray-300 hover:bg-yellow-400 hover:text-black"
+                      }`}
+                    >
+                      {item}
+                    </div>
+                  ))}
+
+                  <Link
+                    href="/portfolio/floorplan"
+                    className="block px-6 py-3 uppercase text-gray-300 hover:bg-yellow-400 hover:text-black"
+                  >
+                    Floor Plan
+                  </Link>
+
+                  <Link
+                    href="/portfolio/isometric"
+                    className="block px-6 py-3 uppercase text-gray-300 hover:bg-yellow-400 hover:text-black"
+                  >
+                    Isometric
+                  </Link>
+
+                  <Link
+                    href="/portfolio/landscape"
+                    className="block px-6 py-3 uppercase text-gray-300 hover:bg-yellow-400 hover:text-black"
+                  >
+                    Landscape
+                  </Link>
                 </div>
 
-                {/* RIGHT PANEL */}
-                {activeTab &&
-                  (activeTab === "Exterior" || activeTab === "Interior") && (
-                    <div className="w-1/2 px-4 sm:px-6 py-6 space-y-3 sm:space-y-4 text-sm sm:text-base tracking-widest uppercase">
-                      {activeTab === "Exterior" && (
-                        <>
-                          <Link
-                            href="/portfolio/exterior/residential"
-                            className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition"
-                            onClick={() => setShowPortfolio(false)}
-                          >
-                            Residential
-                          </Link>
-                          <Link
-                            href="/portfolio/exterior/commercial"
-                            className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition"
-                            onClick={() => setShowPortfolio(false)}
-                          >
-                            Commercial
-                          </Link>
-                        </>
-                      )}
-                      {activeTab === "Interior" && (
-                        <>
-                          <Link
-                            href="/portfolio/interior/residential"
-                            className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition"
-                            onClick={() => setShowPortfolio(false)}
-                          >
-                            Residential
-                          </Link>
-                          <Link
-                            href="/portfolio/interior/commercial"
-                            className="block px-3 py-2 text-gray-300 hover:bg-yellow-400 hover:text-black transition"
-                            onClick={() => setShowPortfolio(false)}
-                          >
-                            Commercial
-                          </Link>
-                        </>
-                      )}
-                    </div>
-                  )}
+                {/* RIGHT */}
+                {activeTab && (
+                  <div className="w-1/2 px-6 py-4 uppercase">
+                    <Link
+                      href={`/portfolio/${activeTab.toLowerCase()}/residential`}
+                      className="block py-2 text-gray-300 hover:bg-yellow-400 hover:text-black"
+                    >
+                      Residential
+                    </Link>
+                    <Link
+                      href={`/portfolio/${activeTab.toLowerCase()}/commercial`}
+                      className="block py-2 text-gray-300 hover:bg-yellow-400 hover:text-black"
+                    >
+                      Commercial
+                    </Link>
+                  </div>
+                )}
               </div>
             )}
           </div>
 
-          <Link href="/blog" className={activeLinkStyle("/blog")}>
+          <Link href="/blog" className={activeLink("/blog")}>
             Blog
           </Link>
-          <Link href="/contact" className={activeLinkStyle("/contact")}>
+
+          <Link href="/contact" className={activeLink("/contact")}>
             Contact
           </Link>
         </nav>
@@ -156,35 +140,36 @@ export default function Navbar() {
         {/* DESKTOP CTA */}
         <Link
           href="/contact"
-          className="hidden md:block px-4 sm:px-6 py-2 border border-white text-white text-sm sm:text-base hover:bg-white hover:text-black transition"
+          className="hidden md:block border border-white px-6 py-2 text-white hover:bg-white hover:text-black transition"
         >
           Get Started
         </Link>
 
-        {/* MOBILE HAMBURGER */}
+        {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden text-white text-2xl z-50"
-          onClick={() => setOpen(!open)}
+          className="md:hidden text-white text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          {open ? <FaTimes /> : <FaBars />}
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
-      {open && (
-        <div className="md:hidden fixed inset-0 bg-black text-white pt-28 px-4 sm:px-6 overflow-auto">
-          <div className="space-y-6 text-lg sm:text-xl tracking-widest uppercase">
-            <Link href="/about" onClick={() => setOpen(false)}>
-              About
-            </Link>
-            <Link href="/service" onClick={() => setOpen(false)}>
-              Services
-            </Link>
+      {menuOpen && (
+        <div className="md:hidden fixed inset-0 bg-black text-white pt-24 px-6 overflow-y-auto">
+          {/* LOGO */}
+          <div className="flex justify-center mb-10">
+            <img src={logo} alt="Infinity Space Group" className="h-12" />
+          </div>
+
+          <div className="flex flex-col space-y-6 uppercase tracking-widest text-base">
+            <Link href="/about">About</Link>
+            <Link href="/service">Services</Link>
 
             {/* MOBILE PORTFOLIO */}
             <div>
               <button
-                className="w-full flex items-center justify-between py-2"
+                className="flex w-full justify-between items-center"
                 onClick={() => setMobilePortfolio(!mobilePortfolio)}
               >
                 <span>Portfolio</span>
@@ -194,69 +179,34 @@ export default function Navbar() {
                   }`}
                 />
               </button>
+
               {mobilePortfolio && (
-                <div className="mt-2 ml-4 space-y-2 text-sm sm:text-base">
-                  <p className="text-gray-400">Exterior</p>
-                  <Link
-                    href="/portfolio/exterior/residential"
-                    onClick={() => setOpen(false)}
-                  >
-                    Residential
+                <div className="ml-4 mt-4 flex flex-col space-y-3 text-sm">
+                  <Link href="/portfolio/exterior/residential">
+                    Exterior – Residential
                   </Link>
-                  <Link
-                    href="/portfolio/exterior/commercial"
-                    onClick={() => setOpen(false)}
-                  >
-                    Commercial
+                  <Link href="/portfolio/exterior/commercial">
+                    Exterior – Commercial
                   </Link>
-
-                  <p className="text-gray-400 mt-2">Interior</p>
-                  <Link
-                    href="/portfolio/interior/residential"
-                    onClick={() => setOpen(false)}
-                  >
-                    Residential
+                  <Link href="/portfolio/interior/residential">
+                    Interior – Residential
                   </Link>
-                  <Link
-                    href="/portfolio/interior/commercial"
-                    onClick={() => setOpen(false)}
-                  >
-                    Commercial
+                  <Link href="/portfolio/interior/commercial">
+                    Interior – Commercial
                   </Link>
-
-                  <Link
-                    href="/portfolio/floorplan"
-                    onClick={() => setOpen(false)}
-                  >
-                    Floor Plan
-                  </Link>
-                  <Link
-                    href="/portfolio/isometric"
-                    onClick={() => setOpen(false)}
-                  >
-                    Isometric
-                  </Link>
-                  <Link
-                    href="/portfolio/landscape"
-                    onClick={() => setOpen(false)}
-                  >
-                    Landscape
-                  </Link>
+                  <Link href="/portfolio/floorplan">Floor Plan</Link>
+                  <Link href="/portfolio/isometric">Isometric</Link>
+                  <Link href="/portfolio/landscape">Landscape</Link>
                 </div>
               )}
             </div>
 
-            <Link href="/blog" onClick={() => setOpen(false)}>
-              Blog
-            </Link>
-            <Link href="/contact" onClick={() => setOpen(false)}>
-              Contact
-            </Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact</Link>
 
             <Link
               href="/contact"
-              onClick={() => setOpen(false)}
-              className="block border border-white text-center py-3 mt-6"
+              className="mt-10 border border-white py-4 text-center"
             >
               Get Started
             </Link>

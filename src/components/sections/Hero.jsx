@@ -83,7 +83,7 @@ export default function Hero() {
       aspect-[9/6] sm:aspect-video
       object-contain sm:object-cover
     "
-          src={heroVideo}
+          src={"https://res.cloudinary.com/dit7znqkl/video/upload/v1769231140/infinity-space/videos/hero/kjvqjaywjmbciazn9qkh.mp4"}
           autoPlay
           loop
           muted
@@ -93,7 +93,7 @@ export default function Hero() {
             console.error('Video failed to load:', heroVideo);
           }}
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={"https://res.cloudinary.com/dit7znqkl/video/upload/v1769231140/infinity-space/videos/hero/kjvqjaywjmbciazn9qkh.mp4"} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
