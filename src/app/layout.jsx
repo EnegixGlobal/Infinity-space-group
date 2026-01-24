@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <ScrollToTop />
         <Navbar />
         <div style={{ marginTop: "2px" }}>{children}</div>

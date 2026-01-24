@@ -6,15 +6,16 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { getImageSrc } from "@/lib/imageHelper";
 
 /* IMAGES */
-const planning = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637271/infinity-space/service/weexemtmn7msxdf5f92v.jpg";
-const interior = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637440/infinity-space/service/mmxh9xnl40tyaeuznfj4.jpg";
-const structure = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637481/infinity-space/service/slmgfdvfzsmexzm8vaxq.jpg";
-const material = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637562/infinity-space/service/ngm7ocbogzq4pqijb9fe.jpg";
-const costing = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637617/infinity-space/service/eyfneffiee2wbjypemxd.jpg";
+const planning = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769240917/infinity-space/service/txq6tiushis4n6taa4hi.jpg";
+const exterior = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/k1w5gp0pt0pdeihlkfvg.jpg";
+const interior = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/qfmr6iyxo4gwh0nsr6kr.jpg";
+const structure = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769241669/infinity-space/service/r1hwkdqayeh7zlwixvet.jpg";
+const material = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/au1y0onqlwcheyc07qit.jpg";
+const costing = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/q4xpvoqarhmkfzzakma6.jpg";
 const civil = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637631/infinity-space/service/yj3sf1oxwnbvlx6cjusu.jpg";
-const landscape = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637654/infinity-space/service/z8wzkcn1201vzppx3fhm.jpg";
+const landscape = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/yvim2bzkx6wqzewomoka.jpg";
 const renovation = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637672/infinity-space/service/o0xtrqq0vns58jmdvjit.jpg";
-const approval = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637696/infinity-space/service/mbjlnatfmbfbpcm0igor.jpg";
+const approval = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/nsfditq2gjalmvfjlnnl.jpg";
 const walkthrough = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637718/infinity-space/service/xzbzzmah2xxkvwnamtyl.jpg";
 
 
@@ -33,7 +34,7 @@ const services = [
 
   {
     title: "Exterior Designing",
-    image: interior,
+    image: exterior,
     details: [
       "3D modelling of your chosen spaces.",
       "Detailed furnishing & material detailing.",
@@ -70,11 +71,9 @@ const services = [
     title: "Turnkey Projects",
     image: material,
     details: [
-      "A-Grade Building material.",
-      "ISI mark TMT BAR.",
-      "Branded Tile & Granite.",
-      "Branded Co. Bath & Sanitary fitting.",
-      "Best Quality Furniture & Interior Product.",
+      "Single Contract",
+      "fixed Price",
+      "Ready-to-Use Delivery",
       "All type Civil & Interior Solution.",
     ],
   },

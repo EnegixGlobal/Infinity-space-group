@@ -1,1 +1,8 @@
-{}
+{
+  "/blog/page": "app/blog/page.js",
+  "/portfolio/interior/residential/page": "app/portfolio/interior/residential/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/portfolio/landscape/page": "app/portfolio/landscape/page.js",
+  "/portfolio/floorplan/page": "app/portfolio/floorplan/page.js",
+  "/portfolio/exterior/commercial/page": "app/portfolio/exterior/commercial/page.js"
+}
