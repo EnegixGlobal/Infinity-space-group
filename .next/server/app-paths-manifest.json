@@ -1,8 +1,10 @@
 {
-  "/blog/page": "app/blog/page.js",
-  "/portfolio/interior/residential/page": "app/portfolio/interior/residential/page.js",
-  "/contact/page": "app/contact/page.js",
+  "/api/images/route": "app/api/images/route.js",
+  "/api/auth/check/route": "app/api/auth/check/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/page": "app/page.js",
+  "/service/page": "app/service/page.js",
   "/portfolio/landscape/page": "app/portfolio/landscape/page.js",
-  "/portfolio/floorplan/page": "app/portfolio/floorplan/page.js",
-  "/portfolio/exterior/commercial/page": "app/portfolio/exterior/commercial/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/blog/page": "app/blog/page.js"
 }

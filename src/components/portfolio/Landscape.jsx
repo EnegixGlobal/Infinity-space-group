@@ -4,13 +4,16 @@ import React from "react";
 import { getImageSrc } from "@/lib/imageHelper";
 
 /* Sample images – replace anytime */
-const img1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815160/infinity-space/landscape/vxu5gabqaymck4uw9nbz.jpg";
-const img2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815216/infinity-space/landscape/tvmvfgdoxwv4e6njaf7b.jpg";
-const img3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815254/infinity-space/landscape/ghg2o1sj4ov2g767o2mn.jpg";
-const img4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815272/infinity-space/landscape/rfat99qttk4t1cioto20.jpg";
+const img1 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/ggzbbns2gi3kixcgzm9k.jpg";
+const img2 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/wrh9muri9t8wa017zakr.jpg";
+const img3 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856668/infinity-space/landscape/mx1fpnmg5mpvanhlihmt.jpg";
+const img4 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/xbzny5pcesghqbzk1om4.jpg";
+const img5 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856667/infinity-space/landscape/g7s80ywo4579k9rbpb96.jpg";
+const img6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/ol74psdhlilp7vulw9sb.jpg";
+
 
 export default function Landscape() {
-  const images = [img1, img2, img3, img4];
+  const images = [img1, img2, img3, img4, img5, img6];
 
   return (
     <section className="bg-black text-white pt-32 pb-24 px-6">
