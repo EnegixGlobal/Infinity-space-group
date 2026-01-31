@@ -109,6 +109,12 @@
       "publicId": "infinity-space/about/qhb3ekq0gx4z73kaqz8w",
       "fileName": "team4.jpg",
       "uploadedAt": "2026-01-17T08:04:18.084Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769852813/infinity-space/about/gbbywwctw8twirosuolz.jpg",
+      "publicId": "infinity-space/about/gbbywwctw8twirosuolz",
+      "fileName": "mapapprovalnaksha.jpeg",
+      "uploadedAt": "2026-01-31T09:46:54.910Z"
     }
   ],
   "service": [
@@ -185,16 +191,22 @@
       "uploadedAt": "2026-01-24T08:19:49.950Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/nsfditq2gjalmvfjlnnl.jpg",
-      "publicId": "infinity-space/service/nsfditq2gjalmvfjlnnl",
-      "fileName": "mapapprovalnaksha.jpeg",
-      "uploadedAt": "2026-01-24T08:19:50.217Z"
-    },
-    {
       "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/au1y0onqlwcheyc07qit.jpg",
       "publicId": "infinity-space/service/au1y0onqlwcheyc07qit",
       "fileName": "turnkeyprojects.jpeg",
       "uploadedAt": "2026-01-24T08:19:51.987Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769855282/infinity-space/service/xec64ulmxnd5ao4irxr1.jpg",
+      "publicId": "infinity-space/service/xec64ulmxnd5ao4irxr1",
+      "fileName": "mapapprovalnaksha.jpeg",
+      "uploadedAt": "2026-01-31T10:28:03.766Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769855925/infinity-space/service/ushi2zdwssyseqzmjold.jpg",
+      "publicId": "infinity-space/service/ushi2zdwssyseqzmjold",
+      "fileName": "heroImage.jpeg",
+      "uploadedAt": "2026-01-31T10:38:47.894Z"
     }
   ],
   "exterior-residential": [
@@ -815,28 +827,40 @@
   ],
   "landscape": [
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815160/infinity-space/landscape/vxu5gabqaymck4uw9nbz.jpg",
-      "publicId": "infinity-space/landscape/vxu5gabqaymck4uw9nbz",
-      "fileName": "landscape.avif",
-      "uploadedAt": "2026-01-19T09:32:07.407Z"
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/wrh9muri9t8wa017zakr.jpg",
+      "publicId": "infinity-space/landscape/wrh9muri9t8wa017zakr",
+      "fileName": "land2.jpeg",
+      "uploadedAt": "2026-01-31T10:51:06.823Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815216/infinity-space/landscape/tvmvfgdoxwv4e6njaf7b.jpg",
-      "publicId": "infinity-space/landscape/tvmvfgdoxwv4e6njaf7b",
-      "fileName": "interior.webp",
-      "uploadedAt": "2026-01-19T09:33:03.624Z"
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/xbzny5pcesghqbzk1om4.jpg",
+      "publicId": "infinity-space/landscape/xbzny5pcesghqbzk1om4",
+      "fileName": "land4.jpeg",
+      "uploadedAt": "2026-01-31T10:51:07.856Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815254/infinity-space/landscape/ghg2o1sj4ov2g767o2mn.jpg",
-      "publicId": "infinity-space/landscape/ghg2o1sj4ov2g767o2mn",
-      "fileName": "planning.avif",
-      "uploadedAt": "2026-01-19T09:33:42.927Z"
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/ggzbbns2gi3kixcgzm9k.jpg",
+      "publicId": "infinity-space/landscape/ggzbbns2gi3kixcgzm9k",
+      "fileName": "land1.jpeg",
+      "uploadedAt": "2026-01-31T10:51:07.920Z"
     },
     {
-      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1768815272/infinity-space/landscape/rfat99qttk4t1cioto20.jpg",
-      "publicId": "infinity-space/landscape/rfat99qttk4t1cioto20",
-      "fileName": "material.webp",
-      "uploadedAt": "2026-01-19T09:33:59.248Z"
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856667/infinity-space/landscape/g7s80ywo4579k9rbpb96.jpg",
+      "publicId": "infinity-space/landscape/g7s80ywo4579k9rbpb96",
+      "fileName": "land5.png",
+      "uploadedAt": "2026-01-31T10:51:08.186Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infinity-space/landscape/ol74psdhlilp7vulw9sb.jpg",
+      "publicId": "infinity-space/landscape/ol74psdhlilp7vulw9sb",
+      "fileName": "land6.jpeg",
+      "uploadedAt": "2026-01-31T10:51:08.389Z"
+    },
+    {
+      "url": "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856668/infinity-space/landscape/mx1fpnmg5mpvanhlihmt.jpg",
+      "publicId": "infinity-space/landscape/mx1fpnmg5mpvanhlihmt",
+      "fileName": "land3.jpeg",
+      "uploadedAt": "2026-01-31T10:51:10.452Z"
     }
   ],
   "isometric": [

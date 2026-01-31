@@ -6,6 +6,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { getImageSrc } from "@/lib/imageHelper";
 
 /* IMAGES */
+const heroImage = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769855925/infinity-space/service/ushi2zdwssyseqzmjold.jpg";
 const planning = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769240917/infinity-space/service/txq6tiushis4n6taa4hi.jpg";
 const exterior = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/k1w5gp0pt0pdeihlkfvg.jpg";
 const interior = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242788/infinity-space/service/qfmr6iyxo4gwh0nsr6kr.jpg";
@@ -15,7 +16,7 @@ const costing = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/i
 const civil = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637631/infinity-space/service/yj3sf1oxwnbvlx6cjusu.jpg";
 const landscape = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/yvim2bzkx6wqzewomoka.jpg";
 const renovation = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637672/infinity-space/service/o0xtrqq0vns58jmdvjit.jpg";
-const approval = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769242789/infinity-space/service/nsfditq2gjalmvfjlnnl.jpg";
+const approval = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769855282/infinity-space/service/xec64ulmxnd5ao4irxr1.jpg";
 const walkthrough = "https://res.cloudinary.com/dit7znqkl/image/upload/v1768637718/infinity-space/service/xzbzzmah2xxkvwnamtyl.jpg";
 
 
@@ -179,7 +180,7 @@ export default function Service() {
         className="px-6"
       >
         <div className="relative max-w-7xl mx-auto h-[500px] overflow-hidden rounded-2xl">
-          <img src={getImageSrc(planning)} alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={getImageSrc(heroImage)} alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
 
           <motion.div
