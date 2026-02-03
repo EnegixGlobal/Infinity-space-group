@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body suppressHydrationWarning>
-        {/* Meta Pixel NoScript */}
+        {/* Meta Pixel NoScript (required by Meta) */}
         <noscript>
           <img
             height="1"
