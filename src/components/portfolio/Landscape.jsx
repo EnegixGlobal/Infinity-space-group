@@ -14,6 +14,7 @@ const img6 = "https://res.cloudinary.com/dit7znqkl/image/upload/v1769856666/infi
 
 export default function Landscape() {
   const images = [img1, img2, img3, img4, img5, img6];
+  
 
   return (
     <section className="bg-black text-white pt-32 pb-24 px-6">
