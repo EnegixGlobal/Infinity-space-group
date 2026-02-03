@@ -7,12 +7,7 @@ export const metadata = {
   title: "Infinity Space Group",
   description: "Infinity Space Group - Architecture and Design Services",
 
-  // Google Search Console verification
-  verification: {
-    google: "TFm2HPD6vlLmT6oYgm63aHU3ir1irNKViEPqQAjlBAc",
-  },
-
-  // Facebook Domain Verification
+  // Facebook Domain Verification (this works fine via metadata)
   other: {
     "facebook-domain-verification": "q7wwvrbp1g0bwg4jfl5jnr9agwu5ax",
   },
@@ -26,7 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Meta Pixel Code (EXACT, unchanged) */}
+        {/* ✅ GOOGLE SITE VERIFICATION (EXACT META TAG) */}
+        <meta
+          name="google-site-verification"
+          content="TFm2HPD6vlLmT6oYgm63aHU3ir1irNKViEPqQAjlBAc"
+        />
+
+        {/* ✅ META PIXEL CODE (EXACT – UNCHANGED) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -46,7 +47,7 @@ fbq('track', 'PageView');
       </head>
 
       <body suppressHydrationWarning>
-        {/* Meta Pixel NoScript (required by Meta) */}
+        {/* ✅ META PIXEL NOSCRIPT (REQUIRED) */}
         <noscript>
           <img
             height="1"
