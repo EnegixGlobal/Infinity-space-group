@@ -70,8 +70,7 @@ export default function Contact() {
           >
             {[
               { label: "Phone", value: "+91 8092409023" },
-              { label: "Email", value: "infinityspacegroup@gmail.com" },
-              { label: "Careers", value: "career@infinityspacegroup.com" },
+              { label: "Email", value: "infinityspacegrup@gmail.com" },
               {
                 label: "Address",
                 value: (
